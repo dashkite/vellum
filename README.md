@@ -1,2 +1,3 @@
-# vellum
-Web Components for Web sites
+# Vellum
+
+Web Components for Web sites.

@@ -1,0 +1,29 @@
+{
+  "name": "@dashkite/vellum",
+  "version": "0.0.0",
+  "description": "Web Components for Web sites",
+  "main": "build/src/index.js",
+  "coffee:main": "src/index.coffee",
+  "scripts": {
+    "test": "genie test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashkite/vellum.git"
+  },
+  "author": "Dan Yoder",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/dashkite/vellum/issues"
+  },
+  "homepage": "https://github.com/dashkite/vellum#readme",
+  "devDependencies": {
+    "@dashkite/brick": "0.0.3",
+    "@dashkite/genie": "0.0.1",
+    "amen": "^3.0.0"
+  },
+  "dependencies": {
+    "@dashkite/carbon": "^3.4.0",
+    "@dashkite/quark": "^0.3.4"
+  }
+}
