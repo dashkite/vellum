@@ -17,7 +17,7 @@ class extends c.Handle
             handle
             .dom
             .querySelector "script[type='application/json']"
-            .textContent
+            .innerText
           JSON.parse json
         c.render html
   ] ] ]
