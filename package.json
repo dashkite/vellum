@@ -24,6 +24,6 @@
   },
   "dependencies": {
     "@dashkite/carbon": "^3.4.0",
-    "@dashkite/quark": "^0.4.2"
+    "@dashkite/quark": "^1.1.0"
   }
 }
