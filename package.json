@@ -18,12 +18,12 @@
   },
   "homepage": "https://github.com/dashkite/vellum#readme",
   "devDependencies": {
-    "@dashkite/brick": "0.0.3",
-    "@dashkite/genie": "0.0.1",
+    "@dashkite/brick": "0.2.0",
+    "@dashkite/genie": "0.1.0",
     "amen": "^3.0.0"
   },
   "dependencies": {
-    "@dashkite/carbon": "^3.4.0",
+    "@dashkite/carbon": "^4.0.2",
     "@dashkite/quark": "^1.1.0"
   }
 }
