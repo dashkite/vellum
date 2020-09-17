@@ -10,7 +10,7 @@ class extends c.Handle
     c.diff
     c.initialize [
       c.shadow
-      c.sheet css
+      c.sheet "main", css
       c.activate [
         k.push ({handle}) ->
           json =
