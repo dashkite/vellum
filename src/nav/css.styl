@@ -11,21 +11,24 @@
   nav
     background-color inherit
     color inherit
-    display flex
-    flex-wrap wrap
-    justify-content var(--justify, center)
-    padding 0.5rem
+
+    // min device width we're allowing for is 320px
+    // however, we have 0.5rem (8px) margins on either
+    // side, so that's really 304px, or 19rem (304/16)
+    // so at 4.5rem width per item, we have room for
+    // 4 items (4 x 4 = 16), plus a gap of 3/4rem
+    // (3 x 3/4 = 3, 16 + 3 = 19)
+    display grid
+    grid-gap 0.75rem
+    grid-template-columns repeat(auto-fit, 4rem);
+    place-content var(--justify, center)
+    padding-top 0.5rem
+    padding-bottom 0.5rem
 
     & > a
-      // min device width we're allowing for is 320px
-      // however, we have 0.5rem (8px) margins on either
-      // side, so that's really 304px, or 19rem (304/16)
-      // so at 4.5rem width per item, we have room for
-      // 4 items (4 x 4.5 = 18), with 1rem leftover for
-      // spacing on either side of the menu itself
       color inherit
       box-sizing border-box
-      width 4.5rem
+      width 4rem
       padding-top 1rem
       padding-right 0.5rem
       padding-left 0.5rem
@@ -52,13 +55,15 @@
         text-align center
 
 :host(.large)
-  line-height 1.5rem
-  font-size 1.35rem
+  line-height 1.25rem
+  font-size 1rem
 
   nav
+    grid-gap 1rem
+    grid-template-columns repeat(auto-fit, 7rem);
     & > a
-      width 8rem
-      height 8rem
+      width 7rem
+      height 7rem
       & > svg
         height 2rem
         width 2rem
