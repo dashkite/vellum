@@ -5,10 +5,10 @@ css = q.build q.sheet [
 
   q.select ":host", [
     q.display "grid"
-    q.set "place-items", "var(--justify, center)"
+    q.set "place-items", "var(--align, center)"
     q.select "article", [
-      q.article [ "all" ]
-      q.margin bottom: q.hrem 6
+      q.article [ "all", "aside right", "figure right" ]
+      q.margin bottom: q.rem 3
     ]
   ]
 ]
