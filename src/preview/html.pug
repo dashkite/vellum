@@ -1,0 +1,24 @@
+article(class  = preset)
+  header
+    .publisher
+      if favicon
+        img(src = favicon)
+      //- p= publisher
+
+    .headline
+      h2= title
+      .byline
+        p
+          span.author= author
+          span.published= published
+
+  if layout == "image"
+    if image
+      section: img(src = image)
+
+
+  else
+    section
+      if image
+        aside: img(src = image)
+      != description
