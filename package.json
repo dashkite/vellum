@@ -29,6 +29,7 @@
     "@dashkite/quark": "^1.3.0-beta.1",
     "dayjs": "^1.9.7",
     "dompurify": "^2.2.2",
-    "marked": "^1.2.7"
+    "marked": "^1.2.7",
+    "url-template": "^2.0.8"
   }
 }

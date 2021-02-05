@@ -1,19 +1,21 @@
 import {flow, curry, tee} from "@pandastrike/garden"
 import * as m from "@dashkite/mercury"
-import s from "@dashkite/mercury-sky"
+import Template from "url-template"
+
+template = Template.parse "https://www.dashkite.com/preview{?url}"
 
 get = curry (name, object) -> object[name]
 
 get = flow [
   m.use m.Fetch.client mode: "cors"
-  s.discover "https://links-api.dashkite.com/"
-  s.resource "preview"
   m.from [
     m.data [ "url" ]
-    m.parameters
+    template.expand
+    m.url
   ]
-  s.method "get"
-  s.request
+  m.accept "application/json"
+  m.method "get"
+  m.request
   m.json
   get "json"
 ]
