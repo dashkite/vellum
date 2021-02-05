@@ -19,6 +19,9 @@ class extends c.Handle
       c.activate [
         c.description
         k.push ({startLevel}, {handle}) ->
+          # TODO this is a singleton so we should probably
+          #      restore the default renderer afterwards
+          # TODO why is the ol element not rendering
           marked.use renderer: demote startLevel
           marked (handle
           .dom

@@ -2,6 +2,7 @@ import * as c from "@dashkite/carbon"
 import * as k from "@dashkite/katana"
 import html from "./html.pug"
 import css from "./css"
+import table from "./table.styl"
 
 class extends c.Handle
 
@@ -11,6 +12,7 @@ class extends c.Handle
     c.initialize [
       c.shadow
       c.sheet "main", css
+      c.sheet "table", table
       c.activate [
         k.push ({handle}) ->
           json =
