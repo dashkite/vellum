@@ -4,6 +4,11 @@ import html from "./html.pug"
 import css from "./css"
 import table from "./table.styl"
 
+scroll = k.peek (_, {handle}) ->
+  if window.location.hash != ""
+    (handle.root.querySelector window.location.hash)
+    .scrollIntoView()
+
 class extends c.Handle
 
   c.mixin @, [
@@ -22,4 +27,5 @@ class extends c.Handle
             .innerText
           JSON.parse json
         c.render html
+        scroll
   ] ] ]
