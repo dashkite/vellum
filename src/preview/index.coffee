@@ -1,13 +1,12 @@
+import Registry from "@dashkite/helium"
 import {pipe, flow} from "@pandastrike/garden"
 import * as k from "@dashkite/katana"
 import * as c from "@dashkite/carbon"
-import {Preview} from "./resources"
 import html from "./html.pug"
 import css from "./css"
 import {normalize} from "./helpers"
 
 merge = (data, description) ->
-  console.log description
   Object.assign {}, description, data
 
 class extends c.Handle
@@ -20,10 +19,14 @@ class extends c.Handle
       c.sheet "main", css
       c.activate [
         c.description
-        k.push Preview.get
+        k.push ({url}, {handle}) ->
+          Registry
+          .get "cms"
+          .load
+            name: "preview"
+            parameters: {url}
         k.push merge
         normalize
-        k.log "data"
         c.render html
       ]
     ]

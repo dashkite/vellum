@@ -13,7 +13,7 @@ css = q.build q.sheet [
 
       q.select "header", [
         q.rows
-        q.set "align-items", "flex-start"
+        q.set "align-items", "center"
         q.padding bottom: q.important q.qrem 1
         q.borders [ "bottom", "silver" ]
         q.margin bottom: q.important q.hrem 1
@@ -40,9 +40,11 @@ css = q.build q.sheet [
 
         q.select ".headline", [
           q.columns
-          q.margin bottom: q.hrem 1
+          # q.margin bottom: q.hrem 1
           q.select "h2", [
-            q.margin bottom: q.important q.qrem 1
+            q.select "&:not(:last)", [
+              q.margin bottom: q.important q.qrem 1
+            ]
             q.border "none"
             q.text (q.qrem 5), 0.9
           ]
@@ -90,6 +92,14 @@ css = q.build q.sheet [
   ]
 
   q.select ":host([data-preset='slack'])", [
+  ]
+  q.select "iframe", [
+    q.reset [ "block" ]
+    q.width q.pct 100
+    q.border "none"
+    q.set "object-fit", "contain"
+    q.set "max-height", "30vh"
+    q.height "400px"
   ]
 ]
 

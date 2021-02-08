@@ -32,8 +32,9 @@ transforms =
 
   instagram: (data) ->
     data = extractMedia data
-    description = data.title.replace(/^[^:]+:[ ]/, "").slice 1, -1
-    title = data.title.replace /on.*$/, ""
+    if title?
+      description = data.title.replace(/^[^:]+:[ ]/, "").slice 1, -1
+      title = data.title.replace /on.*$/, ""
     merge data, {title, description}
 
   # Don't include description for tumblr b/c it's a bio,

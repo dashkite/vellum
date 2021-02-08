@@ -1,24 +1,30 @@
-article(class  = preset)
-  header
-    .publisher
-      if favicon
-        img(src = favicon)
-      //- p= publisher
+if preset == "iframe"
+  iframe(sandbox = "allow-scripts allow-same-origin" srcdoc = html)
+else
+  article(class  = preset)
+    header
+      .publisher
+        if favicon
+          img(src = favicon)
+        //- p= publisher
 
-    .headline
-      h2= title
-      .byline
-        p
-          span.author= author
-          span.published= published
+      .headline
+        h2= title
+        if author || published
+          .byline
+            p
+              span.author= author
+              span.published= published
 
-  if layout == "image"
-    if image
-      section: img(src = image)
-
-
-  else
-    section
+    if layout == "image"
       if image
-        aside: img(src = image)
-      != description
+        section: img(src = image)
+
+
+    else
+      section
+        if image
+          aside
+            figure
+              img(src = image)
+        != description
