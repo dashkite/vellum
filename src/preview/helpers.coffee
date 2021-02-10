@@ -8,6 +8,12 @@ date = (timestamp) ->
   dayjs timestamp
   .format "MMM DD, YYYY"
 
+truncate = (length, suffix, string) ->
+  if string.length <= length
+    string
+  else
+    (string.substr 0, string.lastIndexOf " ", length) + suffix
+
 extractMedia = (data) ->
   data.image = data.media?.images?[0]?.formats?[0]?.url ? null
   data
@@ -15,6 +21,10 @@ extractMedia = (data) ->
 transforms =
   default: (data) ->
     extractMedia data
+
+  twitter: (data) ->
+    data.title = "Twitter"
+    data
 
   # TODO: First image is not an image, though we need to confirm in future.
   gfycat: (data) ->
@@ -32,10 +42,12 @@ transforms =
 
   instagram: (data) ->
     data = extractMedia data
-    if title?
-      description = data.title.replace(/^[^:]+:[ ]/, "").slice 1, -1
-      title = data.title.replace /on.*$/, ""
-    merge data, {title, description}
+    data.title = data.description ? "Instagram"
+    data
+    # if title?
+    #   description = data.title.replace(/^[^:]+:[ ]/, "").slice 1, -1
+    #   title = data.title.replace /on.*$/, ""
+    # merge data, {title, description}
 
   # Don't include description for tumblr b/c it's a bio,
   # not a description of the content and may include HTML
@@ -53,23 +65,26 @@ transforms =
 
   imgur: (data) ->
     data = extractMedia data
-    data.description = data.title
-    delete data.title
+    # data.description = data.title
+    # delete data.title
+    delete data.description
     delete data.author if data.author == data.publisher
     data
 
   giphy: (data) ->
     data = extractMedia data
+    data.title = "Giphy"
     delete data.description
-    delete data.title
     delete data.author if data.author == data.publisher
-    data.layout = "image"
+    delete data.published
     data
 
   "wikimedia foundation, inc.": (data) ->
-    data = extractMedia data
+    # if there's only one image, it's their logo
+    if data.media?.images? and data.media.images.length > 1
+      data.image = data.media.images[0].formats[0].url
 
-    unless (data.url.match /wikipedia.org/)?
+    if ! (data.url.match /wikipedia.org/)?
       return data
 
     publisher = "Wikipedia"
@@ -87,7 +102,7 @@ normalize = k.poke (data) ->
     data.published = date data.published
   transform = transforms[publisher] ? transforms.default
   if data.description
-    data.description = DOMPurify.sanitize data.description
+    data.description = truncate 200, "&hellip;", DOMPurify.sanitize data.description
   transform data
 
 export {normalize}

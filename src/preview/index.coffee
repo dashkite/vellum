@@ -3,7 +3,7 @@ import {pipe, flow} from "@pandastrike/garden"
 import * as k from "@dashkite/katana"
 import * as c from "@dashkite/carbon"
 import html from "./html.pug"
-import css from "./css"
+import css from "./css.styl"
 import {normalize} from "./helpers"
 
 merge = (data, description) ->

@@ -1,0 +1,30 @@
+if preset == "iframe"
+  iframe(sandbox = "allow-scripts allow-same-origin" srcdoc = html)
+
+else
+  article(class  = preset)
+    header
+      .publisher
+        if favicon
+          img(src = favicon)
+        //- p= publisher
+
+      if title || published || author
+        .headline
+          if title
+            h2= title
+          if author || published
+            p.byline
+              if author
+                span.author= author
+              if published
+                span.published= published
+
+    if description || image
+      section
+        if image
+          img(src = image)
+        if description
+          p!= description
+    else
+      p: em No description available.
