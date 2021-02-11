@@ -1,6 +1,6 @@
 {
   "name": "@dashkite/vellum",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "Web Components for Web sites",
   "main": "build/src/index.js",
   "main:coffee": "src/index.coffee",
