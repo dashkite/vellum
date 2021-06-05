@@ -1,16 +1,17 @@
+import * as _ from "@dashkite/joy/metaclass"
 import * as c from "@dashkite/carbon"
 import * as k from "@dashkite/katana"
-import html from "./html.pug"
-import css from "./css.styl"
+import html from "./html"
+import css from "./css"
 
 class extends c.Handle
 
-  c.mixin @, [
+  _.mixin @, [
     c.tag "vellum-nav"
     c.diff
     c.initialize [
       c.shadow
-      c.sheet "main", css
+      c.sheets main: css
       c.activate [
         k.push ({handle}) ->
           json =

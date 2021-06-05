@@ -1,8 +1,13 @@
+import * as _ from "@dashkite/joy/metaclass"
 import * as c from "@dashkite/carbon"
 import * as k from "@dashkite/katana"
-import marked from "marked"
+import { Remarkable } from "remarkable"
 import css from "./css"
 
+md = new Remarkable
+
+# TODO demote headings to appropriate level
+#      figure out how to hook into remarkable's parser
 demote = (start) ->
   heading: (text, level) ->
     level = Number(start) + Number(level) - 1
@@ -10,20 +15,19 @@ demote = (start) ->
 
 class extends c.Handle
 
-  c.mixin @, [
+  _.mixin @, [
     c.tag "vellum-markdown"
     c.diff
     c.initialize [
       c.shadow
-      c.sheet "main", css
+      c.sheets main: css
       c.activate [
         c.description
         k.push ({startLevel}, {handle}) ->
           # TODO this is a singleton so we should probably
           #      restore the default renderer afterwards
           # TODO why is the ol element not rendering
-          marked.use renderer: demote startLevel
-          marked (handle
+          md.render (handle
           .dom
           .querySelector "script[type='text/markdown']"
           .innerText)

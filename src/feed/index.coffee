@@ -1,21 +1,22 @@
-import {pipe, flow} from "@pandastrike/garden"
+import { pipe, flow } from "@dashkite/joy/function"
+import * as _ from "@dashkite/joy/metaclass"
 import * as k from "@dashkite/katana"
 import * as c from "@dashkite/carbon"
 import Feed from "./resource"
-import html from "./html.pug"
-# import css from "./css.styl"
+import html from "./html"
+import css from "./css"
 
 merge = (data, description) ->
   Object.assign {}, description, data
 
 class extends c.Handle
 
-  c.mixin @, [
+  _.mixin @, [
     c.tag "vellum-feed"
     c.diff
     c.initialize [
       c.shadow
-      # c.sheet "main", css
+      c.sheets main: css
       c.activate [
         c.description
         k.push Feed.get

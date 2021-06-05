@@ -1,6 +1,5 @@
-import {curry, tee, flow} from "@pandastrike/garden"
+import { curry, tee, flow } from "@dashkite/joy/function"
 import * as m from "@dashkite/mercury"
-import c from "configuration"
 
 get = curry (name, object) -> object[name]
 
@@ -10,7 +9,7 @@ Feed =
     do flow [
       m.use m.Fetch.client mode: "cors"
       m.url url
-      m.accept "application/xml"
+      #m.accept "application/xml"
       m.method "get"
       m.request
       m.expect.ok

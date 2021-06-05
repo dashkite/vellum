@@ -1,12 +1,15 @@
-import {pipe, curry, tee} from "@pandastrike/garden"
-import {toLower, merge} from "panda-parchment"
+import { pipe, curry, tee } from "@dashkite/joy/function"
+import { merge } from "@dashkite/joy/object"
+import { toLowerCase } from "@dashkite/joy/text"
 import * as k from "@dashkite/katana"
 import DOMPurify from "dompurify"
-import dayjs from "dayjs"
 
 date = (timestamp) ->
-  dayjs timestamp
-  .format "MMM DD, YYYY"
+  new Date timestamp
+  .toLocaleString "en-US",
+    year: "numeric"
+    month: "short"
+    day: "numeric"
 
 truncate = (length, suffix, string) ->
   if string.length <= length

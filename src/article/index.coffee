@@ -1,8 +1,9 @@
+import * as _ from "@dashkite/joy/metaclass"
 import * as c from "@dashkite/carbon"
 import * as k from "@dashkite/katana"
-import html from "./html.pug"
+import html from "./html"
 import css from "./css"
-import table from "./table.styl"
+import table from "./table"
 
 scroll = k.peek (_, {handle}) ->
   if window.location.hash != ""
@@ -11,13 +12,14 @@ scroll = k.peek (_, {handle}) ->
 
 class extends c.Handle
 
-  c.mixin @, [
+  _.mixin @, [
     c.tag "vellum-article"
     c.diff
     c.initialize [
       c.shadow
-      c.sheet "main", css
-      c.sheet "table", table
+      c.sheets
+        main: css
+        table: table
       c.activate [
         k.push ({handle}) ->
           json =
