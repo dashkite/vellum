@@ -13,7 +13,8 @@ class extends c.Handle
       c.shadow
       c.sheets main: css
       c.activate [
-        k.push ({handle}) ->
+        k.read "handle"
+        k.push (handle) ->
           json =
             handle
             .dom

@@ -9,9 +9,23 @@
     box-shadow 0 0 0 1px var(--accent)
 
   nav
-    background-color inherit
-    color inherit
+    & > a
+      box-sizing border-box
+      color inherit
 
+      // this only matters when focused
+      border-radius 0.5rem
+
+      display flex
+      align-items center
+      justify-content flex-start
+      text-decoration none
+
+      & > svg
+        display inline-block
+
+:host(.grid)
+  nav
     // min device width we're allowing for is 320px
     // however, we have 0.5rem (8px) margins on either
     // side, so that's really 304px, or 19rem (304/16)
@@ -26,33 +40,31 @@
     padding-bottom 0.5rem
 
     & > a
-      color inherit
-      box-sizing border-box
       width 4rem
       padding-top 1rem
       padding-right 0.5rem
       padding-left 0.5rem
       padding-bottom 0.5rem
 
-      // this only matters when focused
-      border-radius 0.5rem
-
-      display flex
-      flex-flow column
-      align-items center
-      justify-content flex-start
-      text-decoration none
-
       & > svg
         margin-bottom 0.5rem
-        display inline-block
-        fill var(--text)
-        // overflow visible
         height 1.5rem
         width 1.5rem
 
       & > span
         text-align center
+
+:host(.inline)
+  nav
+    display flex
+    & > a
+      width auto
+      flex-direction row
+      margin-right 1rem
+      & > svg
+        height 2rem
+        width 2rem
+        margin-right 0.5rem
 
 :host(.large)
   line-height 1.25rem
@@ -64,6 +76,3 @@
     & > a
       width 7rem
       height 7rem
-      & > svg
-        height 2rem
-        width 2rem
