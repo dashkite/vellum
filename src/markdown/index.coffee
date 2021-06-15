@@ -22,8 +22,9 @@ class extends c.Handle
       c.shadow
       c.sheets main: css
       c.activate [
+        k.read "handle"
         c.description
-        k.push ({startLevel}, {handle}) ->
+        k.push ({startLevel}, handle) ->
           # TODO this is a singleton so we should probably
           #      restore the default renderer afterwards
           # TODO why is the ol element not rendering

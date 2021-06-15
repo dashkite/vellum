@@ -1,0 +1,65 @@
+doctype html
+
+html
+
+  head
+    style
+      include:stylus index.styl
+    script(type = "module" src = "/build/browser/test/client/index.js")
+  body
+    header
+      h1 Vellum Lookbook
+
+    main
+
+      h2 Vellum Nav
+
+      h3 Default
+
+      section.showcase
+
+        vellum-nav
+          script( type = "application/json" )
+            :yaml
+              items:
+                - label: Home
+                  link: /
+                  sprite: /build/browser/src/media/images/sprites.svg#home
+
+                - label: Preview
+                  link: /preview
+                  sprite: /build/browser/src/media/images/sprites.svg#preview
+
+                - label: Publish
+                  link: /publish
+                  sprite: /build/browser/src/media/images/sprites.svg#publish
+      h3 Grid
+
+      h3 Inline
+
+      section.showcase
+
+        vellum-nav.inline
+          script( type = "application/json" )
+            :yaml
+              items:
+                - label: Home
+                  link: /
+                  sprite: /build/browser/src/media/images/sprites.svg#home
+
+                - label: Preview
+                  link: /preview
+                  sprite: /build/browser/src/media/images/sprites.svg#preview
+
+                - label: Publish
+                  link: /publish
+                  sprite: /build/browser/src/media/images/sprites.svg#publish
+
+      h2 Vellum Markdown
+
+      pre: code vellum-markdown
+
+      section.showcase
+        vellum-markdown
+          script( type = "text/markdown" ).
+            # Hello, World!
