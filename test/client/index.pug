@@ -12,54 +12,6 @@ html
 
     main
 
-      h2 Vellum Nav
+      include nav
 
-      h3 Default
-
-      section.showcase
-
-        vellum-nav
-          script( type = "application/json" )
-            :yaml
-              items:
-                - label: Home
-                  link: /
-                  sprite: /build/browser/src/media/images/sprites.svg#home
-
-                - label: Preview
-                  link: /preview
-                  sprite: /build/browser/src/media/images/sprites.svg#preview
-
-                - label: Publish
-                  link: /publish
-                  sprite: /build/browser/src/media/images/sprites.svg#publish
-      h3 Grid
-
-      h3 Inline
-
-      section.showcase
-
-        vellum-nav.inline
-          script( type = "application/json" )
-            :yaml
-              items:
-                - label: Home
-                  link: /
-                  sprite: /build/browser/src/media/images/sprites.svg#home
-
-                - label: Preview
-                  link: /preview
-                  sprite: /build/browser/src/media/images/sprites.svg#preview
-
-                - label: Publish
-                  link: /publish
-                  sprite: /build/browser/src/media/images/sprites.svg#publish
-
-      h2 Vellum Markdown
-
-      pre: code vellum-markdown
-
-      section.showcase
-        vellum-markdown
-          script( type = "text/markdown" ).
-            # Hello, World!
+      include markdown
