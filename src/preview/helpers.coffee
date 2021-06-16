@@ -100,7 +100,7 @@ transforms =
 
 normalize = k.poke (data) ->
   data.publisher = data.publisher?.trim()
-  publisher = toLower data.publisher ? "default"
+  publisher = toLowerCase data.publisher ? "default"
   if data.published?
     data.published = date data.published
   transform = transforms[publisher] ? transforms.default
