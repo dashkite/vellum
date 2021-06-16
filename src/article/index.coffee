@@ -21,7 +21,8 @@ class extends c.Handle
         main: css
         table: table
       c.activate [
-        k.push ({handle}) ->
+        k.read "handle"
+        k.push (handle) ->
           json =
             handle
             .dom

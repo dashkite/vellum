@@ -19,8 +19,9 @@ class extends c.Handle
       c.shadow
       c.sheets main: css
       c.activate [
+        k.read "handle"
         c.description
-        k.push ({url}, {handle}) ->
+        k.push ({url}, handle) ->
           Registry
           .get "cms"
           .load
