@@ -1,0 +1,7 @@
+input(type = "checkbox" id = "toggle" )
+label( for= "toggle" )
+  span.opened
+    slot( name = "opened-label" )
+  span.closed
+    slot( name = "closed-label" )
+.content: slot( name = "content" )

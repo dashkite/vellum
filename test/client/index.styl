@@ -47,3 +47,20 @@ body
 
       & > vellum-preview
         max-width 20rem
+
+      & > vellum-drawer
+        [slot]
+          display inline-flex
+          align-items center
+          &:before
+            display inline-block
+            height 1.25rem
+            width 1.25rem
+            margin-right 0.5rem
+
+        [slot = "opened-label"]
+          &:before
+            content url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMTAxODIwO308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxnIGRhdGEtbmFtZT0iTGF5ZXIgMzgiIGlkPSJMYXllcl8zOCI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjgsMjhINGEzLDMsMCwwLDEtMy0zVjdBMywzLDAsMCwxLDQsNGg4YTEsMSwwLDAsMSwuNzcuMzZMMTUuOCw4SDI4YTMsMywwLDAsMSwzLDNWMjVBMywzLDAsMCwxLDI4LDI4Wk00LDZBMSwxLDAsMCwwLDMsN1YyNWExLDEsMCwwLDAsMSwxSDI4YTEsMSwwLDAsMCwxLTFWMTFhMSwxLDAsMCwwLTEtMUgxNS4zM2ExLDEsMCwwLDEtLjc2LS4zNkwxMS41Myw2WiIvPjwvZz48L3N2Zz4=")
+        [slot = "closed-label"]
+          &:before
+            content url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojMTAxODIwO308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxnIGRhdGEtbmFtZT0iTGF5ZXIgMzkiIGlkPSJMYXllcl8zOSI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNCwyOGEzLDMsMCwwLDEtMy0zVjdBMywzLDAsMCwxLDQsNGg3YTEsMSwwLDAsMSwuNzcuMzZMMTQuOCw4SDI3YTEsMSwwLDAsMSwwLDJIMTQuMzNhMSwxLDAsMCwxLS43Ni0uMzZMMTAuNTMsNkg0QTEsMSwwLDAsMCwzLDdWMjVhMSwxLDAsMCwwLDEsMSwxLDEsMCwwLDEsMCwyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI1LjM4LDI4SDRhMSwxLDAsMCwxLTEtMS4yMWwzLTE0QTEsMSwwLDAsMSw3LDEySDMwYTEsMSwwLDAsMSwxLDEuMjFMMjguMzIsMjUuNjNBMywzLDAsMCwxLDI1LjM4LDI4Wk01LjI0LDI2SDI1LjM4YTEsMSwwLDAsMCwxLS43OUwyOC43NiwxNGgtMjFaIi8+PC9nPjwvc3ZnPg==")

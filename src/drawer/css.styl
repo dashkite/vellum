@@ -1,0 +1,68 @@
+@keyframes slideIn {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  100% {
+    max-height: 999px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    height: auto;
+    opacity: 1;
+  }
+
+  100% {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+:host
+  display block
+  :focus
+    outline none
+    box-shadow 0 0 0 1px var(--accent)
+
+.content
+  overflow hidden
+  transition all 0.2s ease-in-out
+
+label
+  padding 0
+  margin 0
+  user-select none
+  cursor pointer
+  display inline-flex
+  align-items center
+  & > .opened
+    display inline-block
+  & > .closed
+    display none
+
+input
+  padding 0
+  margin 0
+  position absolute
+  opacity 0
+  z-index -1
+
+input:checked + label
+  & > .opened
+    display none
+  & > .closed
+    display inline-block
+
+input + label + .content
+  animation-name slideOut
+  animation-duration 0.25s
+  animation-fill-mode both
+
+input:checked + label + .content
+  animation-name slideIn
+  animation-duration 0.25s
+  animation-fill-mode both

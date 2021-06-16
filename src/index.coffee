@@ -1,5 +1,6 @@
 import "./markdown"
 import "./article"
 import "./nav"
+import "./drawer"
 import "./preview"
 import "./feed"
