@@ -35,14 +35,15 @@
 label
   padding 0
   margin 0
-  user-select none
-  cursor pointer
-  display inline-flex
-  align-items center
+
+  & > div
+    user-select none
+    cursor pointer
+    display block
   & > .opened
-    display inline-block
-  & > .closed
     display none
+  & > .closed
+    display block
 
 input
   padding 0
@@ -53,9 +54,9 @@ input
 
 input:checked + label
   & > .opened
-    display none
+    display block
   & > .closed
-    display inline-block
+    display none
 
 input + label + .content
   animation-name slideOut
