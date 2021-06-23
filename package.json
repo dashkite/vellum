@@ -24,7 +24,7 @@
     "test": "genie test"
   },
   "dependencies": {
-    "@dashkite/carbon": "^4.1.1-beta.2",
+    "@dashkite/carbon": "file:../carbon",
     "@dashkite/helium": "^0.4.1",
     "@dashkite/joy": "^0.3.10",
     "@dashkite/mercury": "^0.2.4",

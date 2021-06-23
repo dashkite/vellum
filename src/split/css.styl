@@ -1,0 +1,21 @@
+:host
+  display block
+  height 100%
+
+.main
+  display flex
+  height 100%
+  background var(--secondary-background)
+
+  .pane
+    display flex
+
+    ::slotted(*)
+      width 100%
+
+  .gutter
+    background white
+    cursor col-resize
+    width 8px
+    height 6rem
+    align-self center
