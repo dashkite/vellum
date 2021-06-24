@@ -1,4 +1,16 @@
 header
-  slot( name = "label")
-section
-  slot( name = "content" )
+  for key in keys
+    if key === selected
+      button( role = "tab" data-key = key selected)
+        slot( name = `tab-${key}` )
+    else
+      button( role = "tab" data-key = key )
+        slot( name = `tab-${key}` )
+
+for key in keys
+  if key === selected
+    section( role = "tabpanel" aria-hidden = "false" data-key = key )
+      slot( name = `panel-${key}` )
+  else
+    section( role = "tabpanel" aria-hidden = "true" data-key = key )
+      slot( name = `panel-${key}` )

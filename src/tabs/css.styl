@@ -2,13 +2,23 @@
   display block
 
 header
-
   display flex
 
-section
+  button
+    background transparent
+    cursor pointer
+    padding 0.75rem
+    border 1px solid silver
+    border-top-left-radius 0.5rem
+    border-top-right-radius 0.5rem
+    margin-right 0.25rem
+    transition border-width 0.1s linear
 
-::slotted(*)
+    &[selected]
+      border-bottom 2px solid black
+
+section
   display block
 
-::slotted([aria-hidden='true'])
-  display none
+  &[aria-hidden='true']
+    display none

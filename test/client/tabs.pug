@@ -3,8 +3,7 @@ h2 Vellum Tabs
 section.showcase
 
   vellum-tabs
-    label( slot = "label" data-key = "spanish" selected ) Spanish
-    div( slot = "content" data-key = "spanish" ) Hola!
-
-    label( slot = "label" data-key = "english" ) English
-    div( slot = "content" data-key = "english" ) Hello!
+    span( slot = "tab-english" selected) English
+    div( slot = "panel-english" ) Hello!
+    span( slot = "tab-spanish") Spanish
+    div( slot = "panel-spanish" ) Hola!
