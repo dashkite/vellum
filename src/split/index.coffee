@@ -44,12 +44,13 @@ class extends c.Handle
         Ks.peek (event, handle) ->
           if handle.drag?
             event.stopPropagation()
+            event.preventDefault()
             {target, left, right, start, change} = handle.drag
             change += event.movementX
             lx = start + Math.round ((change / handle.dom.offsetWidth) * 100)
             rx = 100 - left
-            left.style.flexGrow = lx
-            right.style.flexGrow = rx
+            left.style.flex = "#{lx} 0 #{lx}%"
+            right.style.flexGrow = "#{rx} 0 #{rx}%"
             handle.drag.change = change
       ]
       c.event "mouseup", [

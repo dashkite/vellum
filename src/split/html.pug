@@ -1,7 +1,6 @@
-- console.log("rendering splitter")
 .main
   for pane, i in panes
-    .pane(style = `flex-grow: ${sizes[i]}`)
+    .pane(style = `flex: ${sizes[i]} 0 ${sizes[i]}%`)
       slot(name = pane)
     if i < panes.length - 1
       .gutter

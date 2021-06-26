@@ -9,8 +9,9 @@ import * as Ks from "@dashkite/katana/sync"
 
 
 _mutate = F.curry (handler, handle) ->
-  observer = new MutationObserver handler
-  observer.observe handle.dom, childList: true
+  _handler = -> handler { handle }
+  observer = new MutationObserver _handler
+  observer.observe handle.dom, subtree: true, childList: true, attributes: true
 
 mutate = (fx) -> K.peek _mutate F.flow fx
 
@@ -43,6 +44,7 @@ getSelected = F.flow [
 ]
 
 getContext = F.flow [
+  K.peek -> console.log "mutation"
   getKeys
   getSelected
   K.mpoke F.binary O.merge
@@ -53,6 +55,9 @@ contains = (selector, fx) ->
     Ks.push (event) -> event.composedPath().find (el) -> el.matches? selector
     Ks.test T.isDefined, F.pipe fx
   ]
+
+matches = (selector, fx) ->
+  Ks.test ((el) -> el.matches selector), F.pipe fx
 
 select = Ks.peek (el) -> el.setAttribute "selected", true
 
@@ -79,6 +84,7 @@ export {
   mutate
   getContext
   contains
+  matches
   select
   reveal
   deselect

@@ -7,6 +7,7 @@ import {
   mutate
   getContext
   contains
+  matches
   select
   reveal
   deselect
@@ -31,10 +32,12 @@ class extends C.Handle
       ]
       C.event "click", [
         contains "button", [
-          deselect
-          hide
-          select
-          reveal
+          matches "[role='tab']", [
+            deselect
+            hide
+            select
+            reveal            
+          ]
         ]
 
 ] ] ]
