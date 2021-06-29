@@ -44,28 +44,18 @@ getSelected = F.flow [
 ]
 
 getContext = F.flow [
-  K.peek -> console.log "mutation"
   getKeys
   getSelected
   K.mpoke F.binary O.merge
 ]
 
-contains = (selector, fx) ->
-  F.pipe [
-    Ks.push (event) -> event.composedPath().find (el) -> el.matches? selector
-    Ks.test T.isDefined, F.pipe fx
-  ]
-
-matches = (selector, fx) ->
-  Ks.test ((el) -> el.matches selector), F.pipe fx
-
 select = Ks.peek (el) -> el.setAttribute "selected", true
 
 reveal = F.pipe [
   Ks.poke (el) -> el.dataset.key
-  Ks.poke (key, event, handle) ->
+  Ks.push (key, event, handle) ->
     handle.root.querySelector "section[data-key='#{key}']"
-  Ks.peek (el) -> el.setAttribute "aria-hidden", "false"
+  Ks.pop (el) -> el.setAttribute "aria-hidden", "false"
 ]
 
 deselect = F.pipe [
@@ -83,8 +73,6 @@ hide = F.pipe [
 export {
   mutate
   getContext
-  contains
-  matches
   select
   reveal
   deselect

@@ -2,12 +2,11 @@ import * as M from "@dashkite/joy/metaclass"
 import * as C from "@dashkite/carbon"
 import html from "./html"
 import css from "./css"
+import * as Ks from "@dashkite/katana/sync"
 
 import {
   mutate
   getContext
-  contains
-  matches
   select
   reveal
   deselect
@@ -31,13 +30,12 @@ class extends C.Handle
         C.render html
       ]
       C.event "click", [
-        contains "button", [
-          matches "[role='tab']", [
-            deselect
-            hide
-            select
-            reveal            
-          ]
+        C.within "button[role='tab']", [
+          deselect
+          hide
+          select
+          reveal
+          C.dispatch "select"
         ]
 
 ] ] ]

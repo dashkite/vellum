@@ -9,6 +9,11 @@ import * as Ks from "@dashkite/katana/sync"
 import html from "./html"
 import css from "./css"
 
+pct = (x) -> Math.round x * 100
+num = (x) -> S.parseNumber S.replace /[^\d\.]/g, "", x
+val = (p, el) -> (getComputedStyle el)[p]
+spct = (x) -> "#{x}%"
+
 class extends c.Handle
 
   M.mixin @, [
@@ -29,15 +34,28 @@ class extends c.Handle
           {panes, sizes: JSON.parse handle.dom.dataset.sizes}
         c.render html
       ]
+      c.describe [
+        k.read "handle"
+        Ks.peek (handle, description) ->
+          sizes = JSON.parse description.sizes
+          panes = handle.dom.querySelectorAll ".pane"
+          for pane, i in panes
+            pane.style.flexBasis = spct sizes[i]
+      ]
       c.event "mousedown", [
         c.matches ".gutter", [
           Ks.poke (event, handle) ->
-            handle.drag =
-              target: event.target
-              left: _left = event.target.previousSibling
-              right: event.target.nextSibling
-              start: S.parseNumber _left.style.flexGrow
-              change: 0
+            parent = event.target.parentNode
+            previous = event.target.previousSibling
+            next = event.target.nextSibling
+            direction = (getComputedStyle parent).flexDirection
+            dimension = if direction == "row" then "width" else "height"
+            sizes =
+              previous: num val dimension, previous
+              next: num val dimension, next
+            available = sizes.previous + sizes.next
+            start = pct (sizes.previous / available)
+            handle.drag = { direction, previous, next, start, change: 0 }
         ]
       ]
       c.event "mousemove", [
@@ -45,15 +63,28 @@ class extends c.Handle
           if handle.drag?
             event.stopPropagation()
             event.preventDefault()
-            {target, left, right, start, change} = handle.drag
+            { direction, previous, next, start, change } = handle.drag
+            available = if direction == "row"
+              handle.dom.offsetWidth
+            else
+              handle.dom.offsetHeight
             change += event.movementX
-            lx = start + Math.round ((change / handle.dom.offsetWidth) * 100)
-            rx = 100 - left
-            left.style.flex = "#{lx} 0 #{lx}%"
-            right.style.flexGrow = "#{rx} 0 #{rx}%"
+            current = start + (pct (change / available))
+            previous.style.flexBasis = spct current
+            next.style.flexBasis = spct (100 - current)
             handle.drag.change = change
       ]
       c.event "mouseup", [
-        Ks.peek (event, handle) -> handle.drag = undefined
-      ]
-] ]
+        Ks.push (event, handle) -> handle.drag?
+        Ks.test T.isDefined, F.pipe [
+          Ks.discard
+          Ks.push (event, handle) ->
+            if handle.drag?
+              { previous, next } = handle.drag
+              handle.drag = undefined
+              handle.dom.dataset.sizes = JSON.stringify [
+                num previous.style.flexBasis
+                num next.style.flexBasis
+              ]
+          c.dispatch "change"
+] ] ] ]

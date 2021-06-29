@@ -5,15 +5,18 @@
 .main
   display flex
   height 100%
-  background var(--secondary-background)
 
   .pane
     display flex
 
   .gutter
-    background white
+    background var(--gutter-color)
+    border-top var(--gutter-border-top, none)
+    border-left var(--gutter-border-left, none)
+    border-bottom var(--gutter-border-bottom, none)
+    border-right var(--gutter-border-right, none)
     cursor col-resize
-    margin 0 7px
-    flex 0 0 5px
-    height 6rem
+    margin 0 var(--gutter-margin)
+    flex-basis var(--gutter-width)
+    height var(--gutter-height)
     align-self center
