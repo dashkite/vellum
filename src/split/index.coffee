@@ -68,6 +68,7 @@ class extends c.Handle
               handle.dom.offsetWidth
             else
               handle.dom.offsetHeight
+            # TODO compute this based on direction
             change += event.movementX
             current = start + (pct (change / available))
             previous.style.flexBasis = spct current
