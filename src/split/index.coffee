@@ -22,7 +22,7 @@ class extends c.Handle
     c.initialize [
       c.shadow
       c.sheets main: css
-      c.activate [
+      c.mutate [
         k.read "handle"
         k.push (handle) ->
           for child, i in handle.dom.children
