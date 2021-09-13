@@ -19,12 +19,16 @@ presets:
   release: null
   esm: null
   browser:
+    esm:
+      directory: .
     logging: false
     fallback: ./build/browser/test/client/index.html
   server:
+    esm:
+      directory: .
     directory: .
     fallback: ./build/browser/test/client/index.html
-    port: 8003
+    port: 8004
     logging: false
   pug:
     targets:
