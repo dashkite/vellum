@@ -15,6 +15,9 @@
   "exports": {
     ".": {
       "browser": "./build/browser/src/index.js"
+    },
+    "./*": {
+      "browser": "./build/browser/src/*.js"
     }
   },
   "files": [
