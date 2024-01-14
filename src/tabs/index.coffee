@@ -1,5 +1,5 @@
 import * as M from "@dashkite/joy/metaclass"
-import * as C from "@dashkite/carbon"
+import * as C from "@dashkite/rio"
 import html from "./html"
 import css from "./css"
 import * as Ks from "@dashkite/katana/sync"

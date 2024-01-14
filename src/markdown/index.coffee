@@ -1,5 +1,5 @@
 import * as _ from "@dashkite/joy/metaclass"
-import * as c from "@dashkite/carbon"
+import * as c from "@dashkite/rio"
 import * as k from "@dashkite/katana"
 import { Remarkable } from "remarkable"
 import css from "./css"

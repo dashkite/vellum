@@ -1,4 +1,4 @@
 import "./drawer"
 import "./markdown"
-import "./split"
+import "./splitter"
 import "./tabs"
