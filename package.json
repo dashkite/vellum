@@ -24,7 +24,8 @@
     "build/browser/src"
   ],
   "scripts": {
-    "test": "genie test"
+    "test": "genie test",
+    "build": "genie build"
   },
   "dependencies": {
     "@dashkite/helium": "^0.4.2",
