@@ -12,8 +12,8 @@ importers:
         specifier: ^0.4.4
         version: 0.4.4
       '@dashkite/joy':
-        specifier: ^0.3.11
-        version: 0.3.16
+        specifier: link:../joy
+        version: link:../joy
       '@dashkite/mercury':
         specifier: ^0.3.1
         version: 0.3.1
