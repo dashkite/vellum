@@ -1,5 +1,7 @@
 if content
   div( class = `container fade ${ type }`)
+    if type == "failure" || type == "warning"
+      i.ri-error-warning-line
     != content
 else
   .container
