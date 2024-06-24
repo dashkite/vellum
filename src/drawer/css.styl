@@ -4,26 +4,26 @@
   display block
   :focus
     outline none
-    box-shadow 0 0 0 1px var(--primary-accent)
+    box-shadow 0 0 0 1px var(--accent)
 
-.content
+label + div
   overflow hidden
   transition all 0.2s ease-in-out
 
 label
   padding 0
   margin 0
+  user-select none
+  cursor pointer
+  display block
 
-  & > div
-    user-select none
-    cursor pointer
-    display block
-  & > .opened
+  ::slotted([data-state="open"])
     display none
-  & > .closed
+  ::slotted([data-state="closed"])
     display block
-  & + .content
-    display none
+
+::slotted([slot='content'])
+  display none
 
 input[id="toggle"]
   padding 0
@@ -36,9 +36,10 @@ input[id="toggle"]
   pointer-events none
 
 input:checked + label
-  & > .opened
+  ::slotted([data-state="open"])
     display block
-  & > .closed
+  ::slotted([data-state="closed"])
     display none
-  & + .content
+
+  + ::slotted([slot="content"])
     display block

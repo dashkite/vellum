@@ -12,8 +12,12 @@ import css from "./css"
 
 pct = (x) -> Math.round x * 100
 num = (x) -> Text.parseNumber Text.replace /[^\d\.]/g, "", x
-val = (p, el) -> (getComputedStyle el)[p]
+computed = (p, el) -> (getComputedStyle el)[p]
 spct = (x) -> "#{x}%"
+apply = ({ node, size }, change ) ->
+  node.style.flexBasis = spct size + change
+isDragging = ( event, handle ) -> handle.drag?
+
 
 class extends R.Handle
 
@@ -22,7 +26,7 @@ class extends R.Handle
     R.diff
     R.initialize [
       R.shadow
-      R.sheets [ css, Posh.component ]
+      R.sheets [ css ]
       R.mutate [
         K.read "handle"
         K.push (handle) ->
@@ -31,62 +35,60 @@ class extends R.Handle
               child.slot = "pane-#{i}"
             else
               child.slot
-        K.poke (panes, handle) ->
+        K.poke ( panes, handle ) ->
           {panes, sizes: JSON.parse handle.dom.dataset.sizes}
         R.render html
       ]
-      R.describe [
-        K.read "handle"
-        Ks.peek (handle, description) ->
-          sizes = JSON.parse description.sizes
-          panes = handle.dom.querySelectorAll ".pane"
-          for pane, i in panes
-            pane.style.flexBasis = spct sizes[i]
-      ]
-      R.event "mousedown", [
+      R.event "pointerdown", [
         R.matches ".gutter", [
-          Ks.poke (event, handle) ->
-            parent = event.target.parentNode
-            previous = event.target.previousSibling
-            next = event.target.nextSibling
-            direction = (getComputedStyle parent).flexDirection
-            dimension = if direction == "row" then "width" else "height"
-            sizes =
-              previous: num val dimension, previous
-              next: num val dimension, next
-            available = sizes.previous + sizes.next
-            start = pct (sizes.previous / available)
-            handle.drag = { direction, previous, next, start, change: 0 }
-        ]
-      ]
-      R.event "mousemove", [
-        Ks.peek (event, handle) ->
-          if handle.drag?
+          Ks.poke ( event, handle ) ->
             event.stopPropagation()
             event.preventDefault()
-            { direction, previous, next, start, change } = handle.drag
-            available = if direction == "row"
-              handle.dom.offsetWidth
-            else
-              handle.dom.offsetHeight
-            # TODO compute this based on direction
-            change += event.movementX
-            current = start + (pct (change / available))
-            previous.style.flexBasis = spct current
-            next.style.flexBasis = spct (100 - current)
-            handle.drag.change = change
+            target = event.target
+            target.setPointerCapture event.pointerId
+            parent = target.parentNode
+            previous = target.previousSibling
+            next =  target.nextSibling
+            handle.drag =
+              target: target
+              previous:
+                node: previous
+                size: num previous.style.flexBasis
+              next: 
+                node: next
+                size: num next.style.flexBasis
+              movement: 0
+              # TODO compute this based on direction
+              available: num computed "width", parent
+        ]
       ]
-      R.event "mouseup", [
-        Ks.push (event, handle) -> handle.drag?
-        Ks.test Type.isDefined, F.pipe [
-          Ks.discard
+      R.event "pointermove", [
+        K.test isDragging, F.pipe [
+          R.intercept
+          Ks.peek ( event, handle ) ->
+            { previous, next, movement, available } = handle.drag
+            # TODO compute this based on direction
+            movement += event.movementX
+            handle.drag.movement = movement
+            change = pct ( movement / available )
+            if ( previous.size + change  ) >= 0
+              if ( next.size - change ) >= 0
+                apply previous, change
+                apply next, -change
+        ]
+      ]
+      R.event "pointerup", [
+        Ks.test (( event, handle ) -> handle.drag? ), F.pipe [
+          R.intercept
           Ks.push (event, handle) ->
-            if handle.drag?
-              { previous, next } = handle.drag
-              handle.drag = undefined
-              handle.dom.dataset.sizes = JSON.stringify [
-                num previous.style.flexBasis
-                num next.style.flexBasis
-              ]
+            { target } = handle.drag
+            handle.drag = undefined
+            target.releasePointerCapture event.pointerId
+            panes = handle
+              .root
+              .querySelectorAll ".pane"
+            sizes = ( num pane.style.flexBasis for pane in panes )
+            handle.dom.dataset.sizes = JSON.stringify sizes
+                
           R.dispatch "change"
 ] ] ] ]
