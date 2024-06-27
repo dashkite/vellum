@@ -1,5 +1,6 @@
 import * as Meta from "@dashkite/joy/metaclass"
 import * as R from "@dashkite/rio"
+import * as K from "@dashkite/katana"
 import * as Posh from "@dashkite/posh"
 
 import html from "./html"
