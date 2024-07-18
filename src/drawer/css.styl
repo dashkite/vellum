@@ -17,10 +17,14 @@ label
   cursor pointer
   display block
 
-  ::slotted([data-state="open"])
+  ::slotted(.node.open)
     display none
-  ::slotted([data-state="closed"])
+    &:has(.selected)
+      display block !important
+  ::slotted(.node.closed)
     display block
+    &:has(.selected)
+      display none !important
 
 ::slotted([slot='content'])
   display none
@@ -35,11 +39,11 @@ input[id="toggle"]
 input[id="toggle"]
   pointer-events none
 
-input:checked + label
-  ::slotted([data-state="open"])
-    display block
-  ::slotted([data-state="closed"])
-    display none
+// input:checked + label
+//   & > ::slotted(.node.open)
+//     display block
+//   & > ::slotted(.node.closed)
+//     display none
 
   + ::slotted([slot="content"])
     display block
