@@ -10,10 +10,13 @@ build/browser/src/markdown/index.js: SSeRpb-_
 build/browser/src/markdown/css.js: tXn-e_32
 build/browser/src/splitter/index.js: laQnEXoG
 build/browser/src/tabs/helpers.js: itIHLEo7
-build/browser/src/index.js: w46wTL-c
+build/browser/src/index.js: whs6-HO8
 build/browser/src/messages/html.js: k_MZBiei
 build/browser/src/messages/css.js: nwqY2rCY
 build/browser/src/messages/index.js: JtOpJhvP
 build/browser/src/tree/html.js: CwEGs-H4
 build/browser/src/tree/css.js: FG4ecNpu
 build/browser/src/tree/index.js: U0WrP5td
+build/browser/src/text-editor/index.js: PYv86JCh
+build/browser/src/text-editor/html.js: FDpagdM5
+build/browser/src/text-editor/css.js: TzT6h1xS
