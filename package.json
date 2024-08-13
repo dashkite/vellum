@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@dashkite/helium": "^0.4.4",
+    "@dashkite/html-render": "link:../html-render",
     "@dashkite/joy": "link:../joy",
     "@dashkite/mercury": "^0.3.1",
     "@dashkite/mercury-sky": "^0.2.0",

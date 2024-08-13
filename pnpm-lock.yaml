@@ -11,6 +11,9 @@ importers:
       '@dashkite/helium':
         specifier: ^0.4.4
         version: 0.4.4
+      '@dashkite/html-render':
+        specifier: link:../html-render
+        version: link:../html-render
       '@dashkite/joy':
         specifier: link:../joy
         version: link:../joy
