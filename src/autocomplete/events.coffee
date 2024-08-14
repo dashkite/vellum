@@ -29,20 +29,9 @@ Options =
   set: ( selected, handle ) ->
     handle.dom.dataset.state = "closed"
     handle.dom.value = selected.dataset.value
-    handle.dispatch "input", handle.dom.value
+    handle.dispatch "change", handle.dom.value
 
 events = Rio.initialize [
-
-  Rio.focused "input", [
-    K.peek ( event, handle ) ->
-      handle
-        .root
-        .querySelector "div.options"
-        ?.scrollIntoView
-            behavior: "smooth"
-            block: "nearest"
-
-  ]
   
   Rio.keyup "input", [
     K.peek ( event, handle ) ->
@@ -56,8 +45,7 @@ events = Rio.initialize [
               target.scrollIntoView
                 behavior: "smooth"
                 block: "nearest"
-          else
-            selected = Options.first handle
+          else if ( selected = Options.first handle )?
             selected.classList.add "selected"
             selected.scrollIntoView
               behavior: "smooth"

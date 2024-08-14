@@ -22,7 +22,7 @@ class extends Rio.Handle
         css
       ]
 
-      Rio.activate [
+      Rio.describe [
         Rio.render html
       ]
     ]
