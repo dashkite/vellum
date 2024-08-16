@@ -10,7 +10,7 @@ build/browser/src/markdown/index.js: SSeRpb-_
 build/browser/src/markdown/css.js: tXn-e_32
 build/browser/src/splitter/index.js: laQnEXoG
 build/browser/src/tabs/helpers.js: itIHLEo7
-build/browser/src/index.js: q_ZPIq6T
+build/browser/src/index.js: re_-XFMJ
 build/browser/src/messages/html.js: k_MZBiei
 build/browser/src/messages/css.js: nwqY2rCY
 build/browser/src/messages/index.js: JtOpJhvP
@@ -24,3 +24,7 @@ build/browser/src/autocomplete/css.js: diW9f-kp
 build/browser/src/autocomplete/index.js: 1LTWQRcJ
 build/browser/src/autocomplete/html.js: xnq4ildC
 build/browser/src/autocomplete/events.js: LZ56cNWj
+build/browser/src/field/index.js: 1VLdj79L
+build/browser/src/field/html.js: 7HmLzOwe
+build/browser/src/field/css.js: FG4ecNpu
+build/browser/src/field/input.js: crG4SI43
