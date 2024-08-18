@@ -15,7 +15,6 @@ class extends Rio.Handle
   Meta.mixin @, [
     Rio.tag "vellum-field"
     Rio.diff
-    Rio.field
     Rio.initialize [
       Rio.shadow
       Rio.sheets [
@@ -28,11 +27,6 @@ class extends Rio.Handle
       Rio.activate [
         Rio.dom
         Rio.attributes
-        # TODO this doesn't work because we haven't rendered yet
-        #      so no slots have been assigned
-        #
-        #      we could check the light DOM?
-        #
         K.poke ( attributes, handle ) ->
           { 
             attributes...
@@ -46,4 +40,5 @@ class extends Rio.Handle
         Rio.render html
       ]
     ]
+    Rio.field
   ]

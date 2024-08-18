@@ -1,6 +1,5 @@
 import * as Meta from "@dashkite/joy/metaclass"
 import * as K from "@dashkite/katana/async"
-import * as Ks from "@dashkite/katana/sync"
 import * as Rio from "@dashkite/rio"
 import * as Posh from "@dashkite/posh"
 
@@ -22,7 +21,12 @@ class extends Rio.Handle
         css
       ]
 
-      Rio.describe [
+      Rio.activate [
+        Rio.description
+        Rio.dom
+        Rio.attributes
+        K.poke ( attributes, description ) ->
+          {  attributes..., description... }
         Rio.render html
       ]
     ]
