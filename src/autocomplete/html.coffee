@@ -8,7 +8,7 @@ template = ({ name, value }) ->
       type: "text"
       value: value
       autocomplete: "off"
-    HTML.div class: "options", [
+    HTML.div part: "options", [
       HTML.slot name: "option"
     ]
   ]

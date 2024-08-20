@@ -26,6 +26,14 @@ Options =
       .composedPath()
       .find ( el ) -> el in slotted
 
+  scroll: ( handle ) ->
+    handle
+      .root
+      .querySelector "[part='options']"
+      .scrollIntoView
+        behavior: "smooth"
+        block: "end"
+
   set: ( selected, handle ) ->
     handle.dom.value = selected.dataset.value
     input = handle.root.querySelector "input"
@@ -48,6 +56,7 @@ events = Rio.initialize [
     K.peek ( event, handle ) ->
       switch event.code
         when "ArrowDown"
+          Options.scroll handle
           selected = Options.selected handle
           if selected?
             if ( target = selected.nextSibling )?
@@ -55,13 +64,13 @@ events = Rio.initialize [
               target.classList.add "selected"
               target.scrollIntoView
                 behavior: "smooth"
-                block: "nearest"
+                block: "end"
               Options.set target, handle
           else if ( selected = Options.first handle )?
             selected.classList.add "selected"
             selected.scrollIntoView
               behavior: "smooth"
-              block: "nearest"
+              block: "end"
             Options.set selected, handle
 
         when "ArrowUp"

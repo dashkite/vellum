@@ -1,7 +1,7 @@
 build/browser/src/drawer/html.js: xeTbyyjZ
 build/browser/src/tabs/css.js: wvLwqu9s
 build/browser/src/drawer/css.js: 1pKWDr4B
-build/browser/src/splitter/css.js: hujaUBXm
+build/browser/src/splitter/css.js: d3vDQx_V
 build/browser/src/drawer/index.js: cM4zWpKS
 build/browser/src/tabs/index.js: u1HPyF-m
 build/browser/src/tabs/html.js: TZ3RVxcE
@@ -20,10 +20,10 @@ build/browser/src/tree/index.js: U0WrP5td
 build/browser/src/text-editor/index.js: PYv86JCh
 build/browser/src/text-editor/html.js: FDpagdM5
 build/browser/src/text-editor/css.js: TzT6h1xS
-build/browser/src/autocomplete/css.js: diW9f-kp
+build/browser/src/autocomplete/css.js: 6XOZdBJ6
 build/browser/src/autocomplete/index.js: SFRhoyNf
-build/browser/src/autocomplete/html.js: slCI1Pi4
-build/browser/src/autocomplete/events.js: eo09gmIV
+build/browser/src/autocomplete/html.js: nyEC6zBQ
+build/browser/src/autocomplete/events.js: D2DzE3BD
 build/browser/src/field/index.js: mnCnqjIe
 build/browser/src/field/html.js: 7HmLzOwe
 build/browser/src/field/css.js: FG4ecNpu
