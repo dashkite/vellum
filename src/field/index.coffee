@@ -35,8 +35,6 @@ class extends Rio.Handle
               hint: handle.hasSlot "hint"
               error: handle.hasSlot "error"
           }
-        K.peek ( attributes ) ->
-          console.log { attributes }
         Rio.render html
       ]
     ]
