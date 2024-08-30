@@ -29,6 +29,14 @@ class extends Rio.Handle
           {  attributes..., description... }
         Rio.render html
       ]
+
+      Rio.modify [ "value" ], [
+        Rio.render html        
+        Rio.root
+        Rio.select "input"
+        K.peek ( input, { value }) -> 
+          input.value = if value? then value else ""
+      ]
     ]
 
     Rio.field
