@@ -38,6 +38,7 @@ Options =
     handle.dom.value = selected.dataset.value
     input = handle.root.querySelector "input"
     input.value = handle.dom.value
+    handle.dispatch "input", handle.dom.value
   
   change: ( selected, handle ) ->
     handle.dom.dataset.state = "closed"
@@ -84,7 +85,6 @@ events = Rio.initialize [
                 block: "nearest"
               Options.set target, handle
 
-
         when "Escape"
           selected = Options.selected handle
           if selected?
@@ -99,6 +99,12 @@ events = Rio.initialize [
             input = handle.root.querySelector "input"
             Options.change selected, handle
 
+        else
+          input = handle.root.querySelector "input"
+          handle.dom.value = input.value
+          handle.dispatch "input", handle.dom.value
+
+
   ]
   
   Rio.event "click", [
@@ -111,6 +117,7 @@ events = Rio.initialize [
   ]
 
   Rio.event "input", [
+    Rio.intercept
     K.peek ( event, handle ) ->
       handle.dom.value = event.target.value
   ]

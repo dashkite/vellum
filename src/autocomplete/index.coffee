@@ -7,6 +7,12 @@ import events from "./events"
 import html from "./html"
 import css from "./css"
 
+Value =
+  set: K.peek ({ value }, handle ) -> 
+    handle.dom.value = if value? then value else ""
+    if ( input = handle.root.querySelector "input" )?
+      input.value = handle.dom.value
+
 class extends Rio.Handle
 
   Meta.mixin @, [
@@ -30,12 +36,12 @@ class extends Rio.Handle
         Rio.render html
       ]
 
+      # when the value is changed, we need to re-render
       Rio.modify [ "value" ], [
+        Value.set
         Rio.render html        
-        Rio.root
-        Rio.select "input"
-        K.peek ( input, { value }) -> 
-          input.value = if value? then value else ""
+        # changing the attributes doesn't actually change
+        # the element's value, so we handle that here
       ]
     ]
 
