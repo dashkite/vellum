@@ -6,9 +6,10 @@ main
   display flex
   height 100%
 
-  // .pane
-
-  // TODO for a vertical split, we'd want to set the gutter *height*
+  .pane
+    overflow auto
+    flex-shrink 0
+    flex-grow 0
 
   .gutter
     background var(--gutter-color, transparent)
@@ -19,4 +20,6 @@ main
     cursor col-resize
     margin 0 var(--gutter-margin, 0.5rem)
     flex-basis var(--gutter-width, 0.25rem)
+    flex-shrink 0
+    flex-grow 0
     align-self stretch
