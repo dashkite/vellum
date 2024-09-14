@@ -37,13 +37,15 @@ Options =
   set: ( selected, handle ) ->
     handle.dom.value = selected.dataset.value
     input = handle.root.querySelector "input"
-    input.value = handle.dom.value
-    handle.dispatch "input", handle.dom.value
+    # input.value = handle.dom.value
+    # handle.dispatch "input", handle.dom.value
+    handle.dispatch "input", input.value
   
   change: ( selected, handle ) ->
     handle.dom.dataset.state = "closed"
     Options.set selected, handle
-    handle.dispatch "change", handle.dom.value
+    input = handle.root.querySelector "input"
+    handle.dispatch "change", input.value
 
   clear: ( selected, handle ) ->
     handle.dom.dataset.state = "closed"
@@ -101,8 +103,8 @@ events = Rio.initialize [
 
         else
           input = handle.root.querySelector "input"
-          handle.dom.value = input.value
-          handle.dispatch "input", handle.dom.value
+          # handle.dom.value = input.value
+          handle.dispatch "search", input.value
 
 
   ]

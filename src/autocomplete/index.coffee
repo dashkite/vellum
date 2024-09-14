@@ -13,7 +13,7 @@ import css from "./css"
 
 Value =
   set: K.peek ({ value }, handle ) -> 
-    handle.dom.value = if value? then value else ""
+    # handle.dom.value = if value? then value else ""
     if ( input = handle.root.querySelector "input" )?
       input.value = handle.dom.value
 
