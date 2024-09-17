@@ -34,6 +34,7 @@ input
 :host([data-state="closed"]) [part="options"]
   display none
 
+
 [part="options"]
   display flex
   flex-flow column
@@ -54,6 +55,5 @@ slot[name='option']::slotted(*)
   margin-block-start var(--suggestion-margin)
 
 slot[name='option']::slotted(.selected)
-    color var(--background)
-    background var(--highlight)
+    --foreground var(--highlight)
     border 1px solid var(--highlight)
