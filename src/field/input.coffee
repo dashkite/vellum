@@ -26,8 +26,8 @@ isEmail = ({ type, subtype }) ->
 isURL = ({ type, subtype }) -> 
   ( type == "text" ) && ( subtype == "url" )
 
-isEnumerated = ({ type, options }) -> 
-  ( type == "enum" ) && ( Type.isArray options )
+isEnumerable = ({ type, options }) -> 
+  ( type.startsWith "enum" ) && ( options?.children? )
 
 isBoolean = ({ type }) -> type == "boolean"
 
@@ -37,9 +37,9 @@ input = generic name: "Render.input"
 
 generic input,
   Type.isObject,
-  ({ name, value, type, required }) ->
+  ({ name, value, type, required, disabled }) ->
     type ?= "text"
-    HTML.input { name, value, type, required }
+    HTML.input { name, value, type, required, disabled }
 
 generic input,
   isCustom,
@@ -54,7 +54,7 @@ generic input,
     }
 
 generic input,
-  isEnumerated,
+  isEnumerable,
   ({ options, name, value, required, specifier... }) ->
     value ?= specifier.default ? ""
     # TODO check if enum is dynamic
@@ -66,15 +66,15 @@ generic input,
         for option in options
           HTML.option value: option, option
     else
-      for option in options
+      for option from options.children
         HTML.label [
           HTML.input { 
             name, type: "radio", 
-            value: option
+            value: option.value
             required
-            checked: value == option 
+            checked: value == option.value
           }
-          HTML.span Format.title option
+          HTML.span option.textContent
         ]
 
 generic input,
@@ -85,9 +85,9 @@ generic input,
 
 generic input,
   isURL,
-  ({ name, value, required }) ->
+  ({ name, value, required, disabled }) ->
     value ?= ""
-    HTML.input { name, value, type: "url", required }
+    HTML.input { name, value, type: "url", required, disabled }
 
 generic input,
   isBoolean,

@@ -12,6 +12,8 @@ class extends Rio.Handle
 
   slot: ( name ) -> @dom.querySelector "[slot='#{ name }']"
 
+  options: -> @dom.querySelector "datalist"
+
   Meta.mixin @, [
     Rio.tag "vellum-field"
     Rio.diff
@@ -30,12 +32,20 @@ class extends Rio.Handle
         K.poke ( attributes, handle ) ->
           { 
             attributes...
+            options: handle.options()
             slots:
               input: handle.hasSlot "input"
               hint: handle.hasSlot "hint"
               error: handle.hasSlot "error"
           }
         Rio.render html
+      ]
+
+      Rio.event "input", [
+        Rio.intercept
+        K.peek ( event, handle ) ->
+          handle.dom.value = event.target.value
+          handle.dispatch "input", detail: handle.dom
       ]
     ]
     Rio.field
