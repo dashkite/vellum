@@ -20,7 +20,7 @@ class extends Rio.Handle
     Rio.initialize [
       Rio.shadow
       Rio.sheets [
-        css...
+        css
         Posh.component
         Posh.forms
         Posh.icons
@@ -41,7 +41,7 @@ class extends Rio.Handle
         Rio.render html
       ]
 
-      Rio.modify [ "name", "type", "value", "required" ], [
+      Rio.modify [ "name", "type", "value", "required", "disabled" ], [
         K.poke ( attributes, handle ) ->
           { 
             attributes...

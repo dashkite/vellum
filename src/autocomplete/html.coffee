@@ -1,6 +1,6 @@
 import HTML from "@dashkite/html-render"
 
-template = ({ name, value }) ->
+template = ({ name, value, disabled }) ->
 
   HTML.main [
     HTML.input
@@ -8,6 +8,7 @@ template = ({ name, value }) ->
       type: "text"
       value: value
       autocomplete: "off"
+      disabled: disabled
     HTML.div part: "options", [
       HTML.slot name: "option"
     ]
