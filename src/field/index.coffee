@@ -41,6 +41,19 @@ class extends Rio.Handle
         Rio.render html
       ]
 
+      Rio.modify [ "name", "type", "value", "required" ], [
+        K.poke ( attributes, handle ) ->
+          { 
+            attributes...
+            options: handle.options()
+            slots:
+              input: handle.hasSlot "input"
+              hint: handle.hasSlot "hint"
+              error: handle.hasSlot "error"
+          }
+        Rio.render html        
+      ]
+
       Rio.event "input", [
         Rio.intercept
         K.peek ( event, handle ) ->
