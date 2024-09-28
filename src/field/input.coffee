@@ -91,28 +91,26 @@ generic input,
 
 generic input,
   isBoolean,
-  ({ label, name, value }) ->
+  ({ name, value }) ->
     value ?= false
     HTML.label [
       HTML.input { name, type: "checkbox", checked: value }
-      HTML.span label
+      HTML.slot name: "option"
     ]
 
 generic input,
   isRange,
-  ({ label, name, value, range }) ->
-    value ?= range[0]
+  ({ label, name, options, value }) ->
+    value ?= options.children[0]
     HTML.div [
-      HTML.datalist id: "#{ name }-list",
-        for item, index in range
-          HTML.option value: index, label: item
+      HTML.slot name: "options"
       HTML.input
         name: name
         type: "range"
         min: 0
-        max: range.length - 1
+        max: options.children.length - 1
         value: value
-        list: "#{ name }-list"
+        list: options.id
     ]
 
 export default input

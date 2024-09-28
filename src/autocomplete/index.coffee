@@ -41,7 +41,7 @@ class extends Rio.Handle
       ]
 
       # when the value is changed, we need to re-render
-      Rio.modify [ "value" ], [
+      Rio.modify [ "value", "disabled" ], [
         Value.set
         Rio.render html        
         # changing the attributes doesn't actually change
