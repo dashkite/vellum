@@ -74,7 +74,7 @@ generic input,
             required
             checked: value == option.value
           }
-          HTML.span option.textContent
+          HTML.span option.label
         ]
 
 generic input,
@@ -100,15 +100,12 @@ generic input,
 
 generic input,
   isRange,
-  ({ label, name, options, value }) ->
-    value ?= options.children[0]
+  ({ label, name, value, options }) ->
+    value ?= 0
     HTML.div [
-      HTML.slot name: "options"
       HTML.input
         name: name
         type: "range"
-        min: 0
-        max: options.children.length - 1
         value: value
         list: options.id
     ]

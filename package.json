@@ -28,6 +28,7 @@
     "build": "genie build"
   },
   "dependencies": {
+    "@dashkite/dominator": "link:../dominator",
     "@dashkite/helium": "^0.4.4",
     "@dashkite/html-render": "link:../html-render",
     "@dashkite/joy": "link:../joy",
