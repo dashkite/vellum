@@ -35,11 +35,12 @@ class extends Rio.Handle
         Rio.render html
       ]
 
+      # TODO we should also respond to changes to the light DOM slots
       Rio.modify [ "name", "type", "value", "required", "disabled" ], [
         Rio.dom
         K.poke DOM.slots
         K.poke Obj.merge
-        Rio.render html        
+        Rio.render html
       ]
 
       Rio.event "input", [

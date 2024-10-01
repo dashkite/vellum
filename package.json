@@ -1,7 +1,7 @@
 {
   "name": "@dashkite/vellum",
   "version": "0.9.0",
-  "description": "Web Components for Web sites",
+  "description": "Web Components used in DashKite applications",
   "homepage": "https://github.com/dashkite/vellum#readme",
   "bugs": {
     "url": "https://github.com/dashkite/vellum/issues"
