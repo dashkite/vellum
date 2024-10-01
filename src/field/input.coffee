@@ -101,13 +101,21 @@ generic input,
 generic input,
   isRange,
   ({ label, name, value, options }) ->
+
     value ?= 0
     HTML.div [
+
+      HTML.slot name: "options"
+
       HTML.input
         name: name
         type: "range"
         value: value
+        min: 0
+        max: options.children.length
         list: options.id
+
+
     ]
 
 export default input

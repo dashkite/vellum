@@ -3,3 +3,11 @@
 
 :host([type="text"])
   grid-column span 2
+
+:host([type="range"])
+  ::slotted(datalist)
+    order 2
+    flex 1 1 auto
+    display flex
+    justify-content space-between
+
