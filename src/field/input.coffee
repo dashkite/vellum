@@ -17,8 +17,8 @@ isCustom = ({ type, html }) -> ( type == "custom" ) && html?
 isMarkdown = ({ type, subtype }) ->
   ( type == "markdown" ) && ( subtype == "prose" )
 
-isProse = ({ type, subtype }) ->
-  ( type == "text" ) && ( subtype == "prose" )
+isProse = ({ type }) ->
+  ( type == "prose" )
 
 isEmail = ({ type, subtype }) ->
   ( type == "text" ) && ( subtype == "email" )
@@ -50,7 +50,7 @@ generic input,
   ({ subtype, name, value, required, hints }) ->
     HTML.textarea {
       name, value, required, 
-      class: "#{ subtype } #{ hints.length }"
+      class: subtype
     }
 
 generic input,
@@ -60,7 +60,7 @@ generic input,
     # TODO check if enum is dynamic
     #      we could maybe use $from
     #      (non-standard, but none of
-    # the standard things work)
+    #      the standard things work)
     if options.length > 6
       HTML.select { name, value },
         for option in options
@@ -112,7 +112,7 @@ generic input,
         type: "range"
         value: value
         min: 0
-        max: options.children.length
+        max: options.children.length - 1
         list: options.id
 
 

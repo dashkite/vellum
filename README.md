@@ -63,6 +63,17 @@ TBD
 
 TBD
 
+#### Styling Range Options
+
+Vellum will bind a `datalist` or `datalist`-like element in the `options` slot to to the range input. When a `datalist` is bound, Vellum will display the options below the range input as flexbox container. You can style the individual options. For example, to display only the first and last options, you style them like this:
+
+```stylus
+option
+  display none
+  &:first-child, &:last-child
+    display inline
+```
+
 ### Autocomplete
 
 Slots
