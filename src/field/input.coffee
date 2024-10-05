@@ -55,16 +55,19 @@ generic input,
 
 generic input,
   isEnumerable,
-  ({ options, name, value, required, specifier... }) ->
-    value ?= specifier.default ? ""
-    # TODO check if enum is dynamic
-    #      we could maybe use $from
-    #      (non-standard, but none of
-    #      the standard things work)
-    if options.length > 6
-      HTML.select { name, value },
-        for option in options
-          HTML.option value: option, option
+  ({ name, value, required, disabled, 
+    state, options, specifier... }) ->
+    console.log [ name ]: value
+    if options.children.length > 6
+      HTML.tag "vellum-autocomplete",
+        name: name
+        value: value ? specifier.default
+        disabled: disabled
+        data: state: state ? "closed"
+        for option in options.children
+          HTML.div slot: "option", data: value: option.value, [
+            HTML.span Format.title option.label
+          ]
     else
       for option from options.children
         HTML.label [
@@ -112,8 +115,8 @@ generic input,
         type: "range"
         value: value
         min: 0
-        max: options.children.length - 1
-        list: options.id
+        max: options?.children.length - 1
+        list: options?.id
 
 
     ]

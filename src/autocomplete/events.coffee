@@ -2,6 +2,13 @@ import * as Rio from "@dashkite/rio"
 import * as K from "@dashkite/katana/async"
 
 Options =
+
+  list: ( handle ) ->
+    handle
+      .root
+      .querySelector "slot[name='option']"
+      .assignedNodes()
+
   selected: ( handle ) ->
     handle
       .root
@@ -122,6 +129,17 @@ events = Rio.initialize [
     Rio.intercept
     K.peek ( event, handle ) ->
       handle.dom.value = event.target.value
+  ]
+
+  Rio.focusin "input", [
+    K.peek ( event, handle ) ->
+      if ( Options.list handle ).length > 0
+        handle.dom.dataset.state = "open"
+  ]
+
+  Rio.focusout "input", [
+    K.peek ( event, handle ) ->
+      handle.dom.dataset.state = "closed"
   ]
 
 ]
