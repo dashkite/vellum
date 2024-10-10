@@ -2,8 +2,12 @@
   opacity 0.5
 
 :host([type="text"])
+:host([type="url"])
+:host([type="email"])
 :host([type="prose"])
-  grid-column span 2
+:host([type="range"])
+  grid-column 1 / -1
+  max-width 20rem
 
 :host([type="range"])
   ::slotted(datalist)

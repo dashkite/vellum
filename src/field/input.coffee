@@ -11,7 +11,6 @@ Format =
     Text.titleCase
   ]
 
-
 isCustom = ({ type, html }) -> ( type == "custom" ) && html?
 
 isMarkdown = ({ type, subtype }) ->
