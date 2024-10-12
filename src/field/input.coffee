@@ -47,16 +47,12 @@ generic input,
 generic input,
   isProse,
   ({ subtype, name, value, required, hints }) ->
-    HTML.textarea {
-      name, value, required, 
-      class: subtype
-    }
+    HTML.textarea { part: "editor", name, required }, value
 
 generic input,
   isEnumerable,
   ({ name, value, required, disabled, 
     state, options, specifier... }) ->
-    console.log [ name ]: value
     if options.children.length > 6
       HTML.tag "vellum-autocomplete",
         name: name
@@ -96,7 +92,11 @@ generic input,
   ({ name, value }) ->
     value ?= false
     HTML.label [
-      HTML.input { name, type: "checkbox", checked: value }
+      HTML.input { 
+        name
+        type: "checkbox"
+        value: if value then "on" else "off" 
+      }
       HTML.slot name: "option"
     ]
 

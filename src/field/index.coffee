@@ -46,7 +46,9 @@ class extends Rio.Handle
       Rio.event "input", [
         Rio.intercept
         K.peek ( event, handle ) ->
-          handle.dom.value = event.target.value
+          handle.dom.value = switch event.target.type
+            when "checkbox" then event.target.checked
+            else event.target.value
           handle.dispatch "input", detail: handle.dom
       ]
     ]
