@@ -90,12 +90,13 @@ generic input,
 generic input,
   isBoolean,
   ({ name, value }) ->
-    value ?= false
+    value ?= "off"
     HTML.label [
       HTML.input { 
         name
         type: "checkbox"
-        value: if value then "on" else "off" 
+        value
+        checked: value == "on"
       }
       HTML.slot name: "option"
     ]
