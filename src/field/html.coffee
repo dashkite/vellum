@@ -23,7 +23,7 @@ template = ( specifier ) ->
         HTML.div [ HTML.slot name: "label" ]
 
       if specifier.input?
-        HTML.slot name: "input"
+        HTML.div [ HTML.slot name: "input" ]
       else
         input specifier
       
