@@ -1,28 +1,28 @@
-import * as M from "@dashkite/joy/metaclass"
-import * as C from "@dashkite/rio"
+import * as Meta from "@dashkite/joy/metaclass"
+import * as Rio from "@dashkite/rio"
+import * as K from "@dashkite/katana/async"
+import * as Ks from "@dashkite/katana/sync"
+import { Tab, Panel } from "./helpers"
 import html from "./html"
 import css from "./css"
-import * as Ks from "@dashkite/katana/sync"
-import * as K from "@dashkite/katana/async"
-import { Tab, Panel } from "./helpers"
 
-class extends C.Handle
+class extends Rio.Handle
 
-  M.mixin @, [
-    C.tag "vellum-tabs"
-    C.diff
-    C.initialize [
-      C.shadow
-      C.sheets [ css ]
-      C.activate [
+  Meta.mixin @, [
+    Rio.tag "vellum-tabs"
+    Rio.diff
+    Rio.initialize [
+      Rio.shadow
+      Rio.sheets [ css ]
+      Rio.activate [
         K.peek ( handle ) ->
-          if !( Tab.selected handle.dom )?
-            Tab.select handle.dom, "[slot=tab]:first-child"
-        C.render html
+          if !( Tab.selected handle )?
+            Tab.select handle, "[slot=tab]:first-child"
+        Rio.render html
       ]
-      C.click "[slot=tab]", [
-        K.peek ( event, handle ) ->
-          Tab.select handle.dom, event.target.closest "[slot=tab]"
+      Rio.click "[slot=tab]", [
+        Ks.poke ( event ) -> event.target.closest "[slot=tab]"
+        Ks.peek ( target, handle ) -> Tab.select handle, target
       ]
     ]
   ]

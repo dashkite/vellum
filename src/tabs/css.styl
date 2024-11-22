@@ -10,8 +10,8 @@ header
   flex-grow 1
   padding 0.5rem
   border 1px solid var(--accent)
-  // border-start-start-radius 0.5rem
   border-start-end-radius 0.5rem
+  transition color 0.25s, background 0.25s
 
 ::slotted([slot="tab"][selected])
   color var(--background)
@@ -19,4 +19,18 @@ header
 
 ::slotted([slot="panel"]:not([selected]))
   display none
+
+// todo figure out how to transition display
+// https://developer.mozilla.org/en-US/docs/Web/CSS/@starting-style
+// https://www.youtube.com/watch?v=vmDEHAzj2XE
+//
+// ::slotted([slot="panel"])
+//   opacity 1
+//   transition display 0.5s, opacity 0.5s
+//   transition-behavior allow-discrete
+
+// @starting-style
+//   ::slotted([slot="panel"][selected])
+//     opacity 0
+//     display none
 

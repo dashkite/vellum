@@ -2,35 +2,41 @@ import Generic from "@dashkite/generic"
 
 Tab = 
 
-  selected: ( root ) ->
-    root.querySelector "[slot=tab][selected]"
+  selected: ( handle ) ->
+    handle.dom.querySelector "[slot=tab][selected]"
 
   select: ( Generic.make "Tab.select" )
 
-    .define [ Element, Element ], ( root, el ) ->
-      Tab.deselect root
+    .define [ Object, Element ], ( handle, el ) ->
+      Tab.deselect handle
       el.setAttribute "selected", ""
-      Panel.select root
-    
-    .define [ Element, String ], ( root, selector ) ->
-      Tab.select root, root.querySelector selector
+      Panel.select handle
+      handle.dispatch "select", el
 
-  deselect: ( root ) ->
+    .define [ Object, String ], ( handle, selector ) ->
+      Tab.select handle, handle.dom.querySelector selector
+
+  deselect: ( handle ) ->
     Tab
-      .selected root
+      .selected handle
       ?.removeAttribute "selected"
 
 Panel =
 
-  selected: ( root ) ->
-    root.querySelector "[slot=panel][selected]"
+  selected: ( handle ) ->
+    handle.dom.querySelector "[slot=panel][selected]"
 
-  select: ( root ) ->
-    if ( panel = Panel.selected root )?
-      panel.removeAttribute "selected"
-    { name } = root.querySelector "[slot=tab][selected]"
-    root
-      .querySelector "[slot=panel][name=#{name}]"
-      ?.setAttribute "selected", ""
+  select: ( handle ) ->
+    Panel.deselect handle
+    if ( tab = Tab.selected handle )?
+      handle
+        .dom
+        .querySelector "[slot=panel][name=#{ tab.name }]"
+        ?.setAttribute "selected", ""
+  
+  deselect: ( handle ) ->
+    Panel
+      .selected handle
+      ?.removeAttribute "selected"
 
 export { Tab, Panel }
