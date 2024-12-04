@@ -103,9 +103,10 @@ generic input,
 
 generic input,
   isRange,
-  ({ label, name, value, minimum, maximum, options }) ->
+  ({ label, name, value, minimum, maximum, step, options }) ->
 
     value ?= 0
+
     HTML.div [
 
       HTML.slot name: "options"
@@ -113,9 +114,10 @@ generic input,
       HTML.input
         name: name
         type: "range"
-        value: value
+        step: step
         min: minimum
         max: maximum ? ( options?.children.length - 1 )
+        value: value
         list: options?.id
 
     ]
