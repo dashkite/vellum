@@ -1,80 +1,42 @@
-import * as F from "@dashkite/joy/function"
-import * as A from "@dashkite/joy/array"
-import * as O from "@dashkite/joy/object"
-import * as T from "@dashkite/joy/type"
-import * as S from "@dashkite/joy/text"
-import * as I from "@dashkite/joy/iterable"
-import * as K from "@dashkite/katana"
-import * as Ks from "@dashkite/katana/sync"
+import Generic from "@dashkite/generic"
 
+Tab = 
 
-_mutate = F.curry (handler, handle) ->
-  _handler = -> handler { handle }
-  observer = new MutationObserver _handler
-  observer.observe handle.dom, subtree: true, childList: true, attributes: true
+  selected: ( handle ) ->
+    handle.dom.querySelector "[slot=tab][selected]"
 
-mutate = (fx) -> K.peek _mutate F.flow fx
+  select: ( Generic.make "Tab.select" )
 
-mutate._ = _mutate
+    .define [ Object, Element ], ( handle, el ) ->
+      Tab.deselect handle
+      el.setAttribute "selected", ""
+      Panel.select handle
+      handle.dispatch "select", el
 
-getKey = F.pipe [
-  (el) -> el.getAttribute("slot")
-  S.split "-"
-  A.rest
-  I.join "-"
-]
+    .define [ Object, String ], ( handle, selector ) ->
+      Tab.select handle, handle.dom.querySelector selector
 
-getKeys = F.flow [
-  K.read "handle"
-  K.poke F.pipe [
-    (handle) -> handle.dom.querySelectorAll "[slot^=tab-]"
-    I.map getKey
-    I.collect
-  ]
-  K.poke (keys) -> { keys }
-]
+  deselect: ( handle ) ->
+    Tab
+      .selected handle
+      ?.removeAttribute "selected"
 
-getSelected = F.flow [
-  K.read "handle"
-  K.poke (handle) -> handle.dom.querySelector "[selected]"
-  K.test T.isDefined, F.flow [
-    K.poke getKey
-    K.poke (selected) -> { selected }
-  ]
-]
+Panel =
 
-getContext = F.flow [
-  getKeys
-  getSelected
-  K.mpoke F.binary O.merge
-]
+  selected: ( handle ) ->
+    handle.dom.querySelector "[slot=panel][selected]"
 
-select = Ks.peek (el) -> el.setAttribute "selected", true
+  select: ( handle ) ->
+    Panel.deselect handle
+    if ( tab = Tab.selected handle )?
+      handle
+        .dom
+        .querySelector "[slot=panel][name=#{ tab.name }]"
+        ?.setAttribute "selected", ""
+  
+  deselect: ( handle ) ->
+    Panel
+      .selected handle
+      ?.removeAttribute "selected"
 
-reveal = F.pipe [
-  Ks.poke (el) -> el.dataset.key
-  Ks.push (key, event, handle) ->
-    handle.root.querySelector "section[data-key='#{key}']"
-  Ks.pop (el) -> el.setAttribute "aria-hidden", "false"
-]
-
-deselect = F.pipe [
-  Ks.push (el, event, handle) ->
-    handle.root.querySelectorAll "button[selected]"
-  Ks.pop I.each (el) -> el.removeAttribute "selected"
-]
-
-hide = F.pipe [
-  Ks.push (el, event, handle) ->
-    handle.root.querySelectorAll "[aria-hidden='false']"
-  Ks.pop I.each (el) -> el.setAttribute "aria-hidden", "true"
-]
-
-export {
-  mutate
-  getContext
-  select
-  reveal
-  deselect
-  hide
-}
+export { Tab, Panel }

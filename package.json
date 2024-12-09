@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@dashkite/dominator": "link:../dominator",
+    "@dashkite/generic": "link:../generic",
     "@dashkite/helium": "^0.4.4",
     "@dashkite/html-render": "link:../html-render",
     "@dashkite/joy": "link:../joy",
