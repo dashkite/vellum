@@ -28,7 +28,7 @@ template = ( specifier ) ->
         input specifier
       
       HTML.div class: "error",
-        if specifier.error? 
+        if specifier.error?
           [
             HTML.i class: "ri-error-warning-line"
             HTML.slot name: "error"

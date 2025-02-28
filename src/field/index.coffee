@@ -33,25 +33,56 @@ class extends Rio.Handle
           Fn.spread Obj.merge
         ]
         Rio.render html
+        K.read "handle"
+        K.peek ( handle ) ->
+          # TODO need to also handle custom element inputs
+          # TODO handle multiple input scenarios, ex: checkboxes
+          input = handle.root.querySelector "input, textarea"
+          handle.dom.setValidity input.validity,
+            input.validationMessage, input
       ]
 
       # TODO we should also respond to changes to the light DOM slots
-      Rio.modify [ "name", "type", "value", "required", "disabled" ], [
+      # Rio.modify [ "name", "type", "value", "required", "disabled" ], [
+      #   Rio.dom
+      #   K.poke DOM.slots
+      #   K.poke Obj.merge
+      #   Rio.render html
+      # ]
+      Rio.mutate [
         Rio.dom
-        K.poke DOM.slots
-        K.poke Obj.merge
-        Rio.render html
+        K.poke Fn.pipe [
+          Fn.map [
+            DOM.attributes
+            DOM.slots
+          ]
+          Fn.spread Obj.merge
+        ]
+        Rio.render html        
       ]
 
+      # TODO possilby set validity for selected errors
+      #      ex: required
       Rio.event "input", [
         Rio.intercept
         K.peek ( event, handle ) ->
+          handle.dispatch "input", detail: handle.dom
+      ]
+
+      Rio.event "change", [
+        Rio.intercept
+        K.peek ( event, handle ) ->
+          # TODO handle multiple input scenarios, ex: checkboxes
+          handle.dom.setValidity event.target.validity,
+            event.target.validationMessage, event.target
           handle.dom.value = switch event.target.type
             when "checkbox" 
               if event.target.checked then "on" else "off"
             else event.target.value
-          handle.dispatch "input", detail: handle.dom
+          handle.dispatch "change", detail: handle.dom
       ]
+
     ]
+
     Rio.field
   ]
