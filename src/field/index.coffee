@@ -49,6 +49,7 @@ class extends Rio.Handle
       #   K.poke Obj.merge
       #   Rio.render html
       # ]
+      # TODO this fires redundantly for some reason?
       Rio.mutate [
         Rio.dom
         K.poke Fn.pipe [
