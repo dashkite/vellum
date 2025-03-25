@@ -37,9 +37,9 @@ class extends Rio.Handle
         K.peek ( handle ) ->
           # TODO need to also handle custom element inputs
           # TODO handle multiple input scenarios, ex: checkboxes
-          input = handle.root.querySelector "input, textarea"
-          handle.dom.setValidity input.validity,
-            input.validationMessage, input
+          if ( input = handle.root.querySelector "input, textarea" )?
+            handle.dom.setValidity input.validity,
+              input.validationMessage, input
       ]
 
       # TODO we should also respond to changes to the light DOM slots
