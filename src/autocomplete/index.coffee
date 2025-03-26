@@ -15,7 +15,7 @@ Value =
   set: K.peek ({ value }, handle ) -> 
     # handle.dom.value = if value? then value else ""
     if ( input = handle.root.querySelector "input" )?
-      input.value = handle.dom.value
+      input.value = value
 
 class extends Rio.Handle
 
@@ -42,6 +42,7 @@ class extends Rio.Handle
 
       # when the value is changed, we need to re-render
       Rio.modify [ "value", "disabled" ], [
+        K.peek ( dom ) -> console.log modify: { dom }
         Value.set
         Rio.render html        
         # changing the attributes doesn't actually change

@@ -1,7 +1,7 @@
 import * as Fn from "@dashkite/joy/function"
 import * as Meta from "@dashkite/joy/metaclass"
 import * as Obj from "@dashkite/joy/object"
-import DOM from "@dashkite/dominator"
+import * as DOM from "@dashkite/dominator"
 import * as Rio from "@dashkite/rio"
 import * as K from "@dashkite/katana/async"
 import * as Posh from "@dashkite/posh"
