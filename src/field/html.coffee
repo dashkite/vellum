@@ -33,7 +33,7 @@ Render =
     if specifier.input?
       HTML.slot name: "input"
     else
-      _input input
+      _input specifier
 
 
   error: ( specifier ) ->
