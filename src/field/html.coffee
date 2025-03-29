@@ -35,7 +35,6 @@ Render =
     else
       _input specifier
 
-
   error: ( specifier ) ->
     HTML.div class: "error",
       if specifier.error?
