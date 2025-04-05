@@ -12,6 +12,7 @@ template = ({ name, value, disabled }) ->
     HTML.div part: "options", [
       HTML.slot name: "option"
     ]
+    HTML.slot name: "status"
   ]
 
 export default template
