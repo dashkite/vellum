@@ -58,7 +58,6 @@ class extends R.Handle
                 node: next
                 size: num next.style.flexBasis
               movement: 0
-              # TODO compute this based on direction
               available: num computed "width", parent
         ]
       ]
@@ -67,7 +66,6 @@ class extends R.Handle
           R.intercept
           Ks.peek ( event, handle ) ->
             { previous, next, movement, available } = handle.drag
-            # TODO compute this based on direction
             movement += event.movementX
             handle.drag.movement = movement
             change = pct ( movement / available )

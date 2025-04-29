@@ -35,21 +35,11 @@ class extends Rio.Handle
         Rio.render html
         K.read "handle"
         K.peek ( handle ) ->
-          # TODO need to also handle custom element inputs
-          # TODO handle multiple input scenarios, ex: checkboxes
           if ( input = handle.root.querySelector "input, textarea" )?
             handle.dom.setValidity input.validity,
               input.validationMessage, input
       ]
 
-      # TODO we should also respond to changes to the light DOM slots
-      # Rio.modify [ "name", "type", "value", "required", "disabled" ], [
-      #   Rio.dom
-      #   K.poke DOM.slots
-      #   K.poke Obj.merge
-      #   Rio.render html
-      # ]
-      # TODO this fires redundantly for some reason?
       Rio.mutate [
         Rio.dom
         K.poke Fn.pipe [
@@ -62,8 +52,6 @@ class extends Rio.Handle
         Rio.render html        
       ]
 
-      # TODO possilby set validity for selected errors
-      #      ex: required
       Rio.event "input", [
         Rio.intercept
         K.peek ( event, handle ) ->
@@ -73,7 +61,6 @@ class extends Rio.Handle
       Rio.event "change", [
         Rio.intercept
         K.peek ( event, handle ) ->
-          # TODO handle multiple input scenarios, ex: checkboxes
           handle.dom.setValidity event.target.validity,
             event.target.validationMessage, event.target
           handle.dom.value = switch event.target.type

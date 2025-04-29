@@ -6,8 +6,6 @@ import css from "./css"
 
 md = new Remarkable
 
-# TODO demote headings to appropriate level
-#      figure out how to hook into remarkable's parser
 demote = (start) ->
   heading: (text, level) ->
     level = Number(start) + Number(level) - 1
@@ -25,9 +23,6 @@ class extends c.Handle
         k.read "handle"
         c.description
         k.push ({startLevel}, handle) ->
-          # TODO this is a singleton so we should probably
-          #      restore the default renderer afterwards
-          # TODO why is the ol element not rendering
           md.render (handle
           .dom
           .querySelector "script[type='text/markdown']"

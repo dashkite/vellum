@@ -7,9 +7,6 @@ import events from "./events"
 import html from "./html"
 import css from "./css"
 
-# TODO The value and the input are different.
-#      The value should be based on the value
-#      parameter for the option.
 
 Value =
   set: K.peek ({ value }, handle ) -> 
