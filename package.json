@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@dashkite/dominator": "link:../dominator",
+    "@dashkite/domo": "link:../domo",
     "@dashkite/generic": "link:../generic",
     "@dashkite/helium": "^0.4.4",
     "@dashkite/html-render": "link:../html-render",
@@ -37,9 +38,11 @@
     "@dashkite/mercury-sky": "^0.2.0",
     "@dashkite/posh": "link:../posh",
     "@dashkite/quark": "^1.3.0-beta.8",
+    "@dashkite/registry": "link:../registry",
     "@dashkite/rio": "link:../rio",
     "@dashkite/rio-oxygen": "link:../rio-oxygen",
     "@dashkite/rio-vega": "link:../rio-vega",
+    "@dashkite/wayland": "link:../wayland",
     "dompurify": "^2.3.1",
     "remarkable": "^2.0.1"
   },

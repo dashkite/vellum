@@ -1,6 +1,6 @@
 import { generic } from "@dashkite/joy/generic"
 import * as Type from "@dashkite/joy/type"
-import HTML from "@dashkite/html-render"
+import HTML from "@dashkite/domo"
 
 import * as Fn from "@dashkite/joy/function"
 import * as Text from "@dashkite/joy/text"

@@ -1,9 +1,8 @@
 import * as Fn from "@dashkite/joy/function"
+import HTML from "@dashkite/domo"
 import { shadowed, renderable, styleable } from "@dashkite/wayland"
 import { component, icons } from "@dashkite/posh"
 import Registry from "@dashkite/registry"
-
-import html from "./html"
 
 class extends do Fn.pipe [
     shadowed, renderable, styleable ]
@@ -13,16 +12,16 @@ class extends do Fn.pipe [
   @sheets [
     component
     icons
-    css
   ]
 
   @connect ->
-    messages = await Register.get "messages"
+    messages = await Registry.get "messages"
+    console.log { messages }
     name = @dom.getAttribute "name"
     icon = if messages.has [ "icons", name ]
       messages.get [ "icons", name ]
     else
       name
-    @render html { icon }
+    @render HTML.i class: "ri-#{ icon }"
 
   

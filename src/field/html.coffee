@@ -2,7 +2,7 @@ import * as Type from "@dashkite/joy/type"
 import * as Arr from "@dashkite/joy/array"
 import * as It from "@dashkite/joy/iterable"
 import Generic from "@dashkite/generic"
-import HTML from "@dashkite/html-render"
+import HTML from "@dashkite/domo"
 import _input from "./input"
 
 Render =
