@@ -16,7 +16,6 @@ class extends do Fn.pipe [
 
   @connect ->
     messages = await Registry.get "messages"
-    console.log { messages }
     name = @dom.getAttribute "name"
     icon = if messages.has [ "icons", name ]
       messages.get [ "icons", name ]

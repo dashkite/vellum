@@ -10,17 +10,17 @@ build/browser/src/drawer/index.js: 3eVNV4Sy
 build/browser/src/messages/html.js: KyHaQ9nZ
 build/browser/src/autocomplete/css.js: SPeGaq5k
 build/browser/src/markdown/index.js: 983UGgcY
-build/browser/src/autocomplete/html.js: 3a1Mn1g2
+build/browser/src/autocomplete/html.js: 9ivBw4Zb
 build/browser/src/text-editor/index.js: PD90al7O
 build/browser/src/tabs/helpers.js: EOLXcxVH
 build/browser/src/autocomplete/index.js: 0h5nUb9a
 build/browser/src/splitter/html.js: qD-17nLq
 build/browser/src/field/css.js: 8RutCJPq
-build/browser/src/field/html.js: R8Z952fz
+build/browser/src/field/html.js: 1RuNDz0h
 build/browser/src/field/index.js: y1U2PRta
 build/browser/src/messages/index.js: L4GUIYtL
 build/browser/src/markdown/css.js: vHZyJVxg
-build/browser/src/field/input.js: e6sZRK_I
+build/browser/src/field/input.js: 8-nzotPl
 build/browser/src/splitter/index.js: zfGdfpU4
 build/browser/src/tabs/index.js: keh_Ly4W
 build/browser/src/autocomplete/events.js: '-MQifWnK'
@@ -28,5 +28,5 @@ build/browser/src/next/named-icon/html.js: 0l37z_0m
 build/browser/src/next/message-bar/css.js: jVvxq46I
 build/browser/src/next/form-field/index.js: SWbrXCLu
 build/browser/src/next/message-bar/html.js: UkuookkG
-build/browser/src/next/named-icon/index.js: vqChZGeR
+build/browser/src/next/named-icon/index.js: WVLiMdgK
 build/browser/src/next/message-bar/index.js: L7RHFZJs
