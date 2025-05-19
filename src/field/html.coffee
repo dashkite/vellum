@@ -45,8 +45,6 @@ Render =
 
 template = ( specifier ) ->
 
-  console.log wtf2: specifier
-
   classes = It.join " ", 
     Arr.compact [ 
         specifier.type

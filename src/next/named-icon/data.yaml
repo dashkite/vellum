@@ -1,0 +1,39 @@
+theme: palette-line
+borders: square-line
+colors: palette-line
+fonts: font-family
+layout: layout-3-fill
+flow: layout-3-fill
+grid: grid-fill
+# size: expand-width-fill
+size: font-size-2
+proximity: ruler-line
+border: shape-2-line
+
+# gadget
+container: folder-line
+page: pages-line
+image: image-line
+variant: moon-line
+text: sticky-note-line
+navigation: menu-line
+link: link
+icon: image-circle-line
+
+template: shapes-line
+article: newspaper-line
+
+# application action
+open: arrow-down-s-fill
+closed: arrow-right-s-fill
+add gadget: add-line
+add page: file-add-line
+remove gadget: delete-bin-7-line
+edit: edit-line
+search: search-line
+forward: arrow-right-s-line
+back: arrow-left-s-line
+pin: pushpin-line
+unpin: unpin-line
+moon: moon-line
+sun: sun-line

@@ -1,0 +1,20 @@
+if success
+  .container.fade.success
+    | &check;
+    |
+    != success
+else if failure
+  .container.fade.failure
+    | &times;
+    |
+    != failure
+else if warning
+  .container.fade.warning
+    | &#x26A0;
+    |
+    != warning
+else if note
+  .container.fade
+    != note
+else 
+  .container

@@ -1,0 +1,30 @@
+@keyframes fade
+  0%
+    opacity 0 
+  25%
+    opacity 1
+  75%
+    opacity 1
+  100%
+    opacity 0
+
+.container
+  color var(--background)
+  border-radius 0.5rem
+
+  &.fade
+    animation fade 10s ease alternate
+    padding 0.5rem 1.5rem
+  
+  &.success
+    background var(--success)
+
+  &.info
+    background var(--info)
+
+  &.warning
+    background var(--warning)
+
+  &.failure
+    background var(--failure)
+  
