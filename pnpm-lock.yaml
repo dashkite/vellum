@@ -53,6 +53,9 @@ importers:
       '@dashkite/wayland':
         specifier: link:../wayland
         version: link:../wayland
+      '@dashkite/zest':
+        specifier: link:../zest
+        version: link:../zest
       dompurify:
         specifier: ^2.3.1
         version: 2.4.7

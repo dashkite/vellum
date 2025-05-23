@@ -4,7 +4,7 @@ build/browser/src/tabs/css.js: F1Y-CDaw
 build/browser/src/messages/css.js: _AHh7Fi0
 build/browser/src/drawer/css.js: fwqVvW9g
 build/browser/src/tabs/html.js: URmtLGX7
-build/browser/src/index.js: XqR4ywky
+build/browser/src/index.js: KTG4MAd_
 build/browser/src/splitter/css.js: vsV5If2j
 build/browser/src/drawer/index.js: 3eVNV4Sy
 build/browser/src/messages/html.js: KyHaQ9nZ
@@ -26,7 +26,9 @@ build/browser/src/tabs/index.js: keh_Ly4W
 build/browser/src/autocomplete/events.js: '-MQifWnK'
 build/browser/src/next/named-icon/html.js: 0l37z_0m
 build/browser/src/next/message-bar/css.js: jVvxq46I
-build/browser/src/next/form-field/index.js: SWbrXCLu
+build/browser/src/next/form-field/index.js: X_rejbL9
 build/browser/src/next/message-bar/html.js: UkuookkG
-build/browser/src/next/named-icon/index.js: WVLiMdgK
+build/browser/src/next/named-icon/index.js: rub1qxh5
 build/browser/src/next/message-bar/index.js: L7RHFZJs
+build/browser/src/next/form-field/css.js: 8RutCJPq
+build/browser/src/next/form-field/html.js: bJWz7Ybf

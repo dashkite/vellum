@@ -5,7 +5,8 @@ import { component, icons } from "@dashkite/posh"
 import Registry from "@dashkite/registry"
 
 class extends do Fn.pipe [
-    shadowed, renderable, styleable ]
+    shadowed, renderable, styleable 
+  ]
 
   @tag "named-icon"
 

@@ -1,0 +1,20 @@
+:host([disabled]) main
+  opacity 0.5
+
+:host([type="text"])
+:host([type="url"])
+:host([type="email"])
+:host([type="prose"])
+:host([type="range"])
+  grid-column 1 / -1
+  max-width 20rem
+
+:host([type="range"])
+  ::slotted(datalist)
+    order 2
+    flex 1 1 auto
+    display flex
+    flex-direction column
+    justify-content space-between
+    // match the default field padding
+    padding 0.75rem
