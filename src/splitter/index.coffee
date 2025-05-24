@@ -18,7 +18,6 @@ apply = ({ node, size }, change ) ->
   node.style.flexBasis = spct size + change
 isDragging = ( event, handle ) -> handle.drag?
 
-
 class extends R.Handle
 
   Meta.mixin @, [

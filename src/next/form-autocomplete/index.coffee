@@ -6,26 +6,23 @@ import {
 } from "@dashkite/wayland"
 import { component, forms, icons } from "@dashkite/posh"
 
-import css from "./css"
+import events from "./events"
 import html from "./html"
+import css from "./css"
 
 class extends do Fn.pipe [
     shadowed, field, renderable, styleable, 
-    reactive, eventful, observable
+    reactive, observable, events
   ]
 
-  @tag "form-field"
+  @tag "form-autocomplete"
 
-  @sheets [
-    component, forms
-    icons, css
-  ]
+  @sheets [ component, forms, icons, css ]
 
   @observe.attributes [ 
-      "name", "type", "value"
+      "name", "value"
       "required", "disabled"
-      "label", "hint", "error"
-      "pattern", "placeholder"
+      "placeholder"
     ]
 
   @reactor ( reactor ) ->
@@ -37,15 +34,3 @@ class extends do Fn.pipe [
           @render html { host.attributes..., host.slots... }
       yield event
     return
-
-  @input()
-    .intercept()
-    .apply -> @dispatch "input", detail: @dom
-
-  @change()
-    .intercept()
-    .apply ( event ) ->
-      @dom.setValidity event.target.validity,
-        event.target.validationMessage, event.target
-      @dom.value = event.target.value
-      @dispatch "change", detail: @dom
