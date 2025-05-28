@@ -7,6 +7,8 @@ import {
 } from "@dashkite/wayland"
 import { component, icons, compact } from "@dashkite/posh"
 
+import EventReactor from "@dashkite/reactive/event-reactor"
+
 import html from "./html"
 import css from "./css"
 
@@ -34,12 +36,11 @@ class extends do Fn.pipe [
     messages = await Registry.get "messages"
     inbox = await Registry.get "message bar inbox"
 
-    for await event from reactor
-      switch event.name
-        when "connect", "next"
-          @render html()
-          message = await inbox.dequeue()
-          @render html message
-      yield event
-    return
-
+    yield from EventReactor
+      .make reactor
+      .bind @
+      .forward "*"
+      .when "connect, next", ( event ) ->
+        @render html()
+        message = await inbox.dequeue()
+        @render html message

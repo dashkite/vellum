@@ -38,6 +38,9 @@ importers:
       '@dashkite/quark':
         specifier: ^1.3.0-beta.8
         version: 1.3.0-beta.8
+      '@dashkite/reactive':
+        specifier: link:../reactive
+        version: link:../reactive
       '@dashkite/registry':
         specifier: link:../registry
         version: link:../registry
