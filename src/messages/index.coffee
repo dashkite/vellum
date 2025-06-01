@@ -7,7 +7,7 @@ import * as Text from "@dashkite/joy/text"
 import * as R from "@dashkite/rio"
 import * as Posh from "@dashkite/posh"
 import * as K from "@dashkite/katana/async"
-import Registry from "@dashkite/helium"
+# import Registry from "@dashkite/helium"
 
 import html from "./html"
 import css from "./css"

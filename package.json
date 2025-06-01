@@ -31,7 +31,6 @@
     "@dashkite/dominator": "link:../dominator",
     "@dashkite/domo": "link:../domo",
     "@dashkite/generic": "link:../generic",
-    "@dashkite/helium": "^0.4.4",
     "@dashkite/html-render": "link:../html-render",
     "@dashkite/joy": "link:../joy",
     "@dashkite/mercury": "^0.3.1",
