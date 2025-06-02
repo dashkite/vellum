@@ -34,40 +34,42 @@ template = ( specifier ) ->
 
   HTML.main class: ( Render.classes specifier ), [
 
-    HTML.label [
+    if specifier.hint?
+      HTML.div id: "hint", popover: "hint", [
+        Render.option "hint", specifier
+      ]
 
-      # hint, which falls back to just the label if none is
-      # provided
-      if specifier.hint?
-        HTML.details class: "hint", [
-          HTML.summary [ Render.option "label", specifier ]
-          HTML.div [ Render.option "hint", specifier ]
-        ]
-      else
+    HTML.div [
+
+      HTML.label for: "input", [
         Render.option "label", specifier
+      ]
 
-      # the input, either via slot or render a simple input
-      if specifier.input?
-        HTML.slot name: "input"
-      else
-        HTML.input
-          name: specifier.name
-          type: specifier.type
-          value: specifier.value
-          required: specifier.required
-          disabled: specifier.disabled
-          pattern: specifier.pattern
-          placeholder: specifier.placeholder
+      if specifier.hint?
+        HTML.button type: "button", popovertarget: "hint", 
+          HTML.tag "named-icon", name: "information"
 
-      # error message for this field, if any
-      HTML.div class: "error",
-        if specifier.error?
-          [
-            HTML.i class: "ri-error-warning-line"
-            Render.option "error", specifier
-          ]
+    ]
+  
+    if specifier.input?
+      HTML.slot name: "input"
+    else
+      HTML.input
+        id: "input"
+        name: specifier.name
+        type: specifier.type
+        value: specifier.value
+        required: specifier.required
+        disabled: specifier.disabled
+        pattern: specifier.pattern
+        placeholder: specifier.placeholder
 
-    ]      
+    # admonition
+    HTML.div if specifier.error?
+      [
+        HTML.tag "named-icon", name: "error"
+        Render.option "error", specifier
+      ]
   ]
 
 export default template

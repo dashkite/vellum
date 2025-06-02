@@ -22,11 +22,11 @@ class extends do Fn.pipe [
   ]
 
   @observe.attributes [ 
-      "name", "type", "value"
-      "required", "disabled"
-      "label", "hint", "error"
-      "pattern", "placeholder"
-    ]
+    "name", "type", "value"
+    "required", "disabled"
+    "label", "hint", "error"
+    "pattern", "placeholder"
+  ]
 
   @reactor ( reactor ) ->
     for await event from reactor
