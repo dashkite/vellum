@@ -33,8 +33,16 @@ class extends do Fn.pipe [
       switch event.name
         when "connect", "modify"
           host = $ @dom          
+          shadow = $ @shadow
           @dom.value = host.attributes.value
           @render html { host.attributes..., host.slots... }
+          # TODO what to do with slotted input
+          # TODO sync the @dom value property with the input value property
+          # TODO how much of this can be moved into the field mixin?
+          if ( input = ( shadow.query "input" ).first )?
+            input.value = @dom.value
+            @dom.setValidity input.validity, 
+              input.validationMessage, input
       yield event
     return
 

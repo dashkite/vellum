@@ -65,11 +65,12 @@ template = ( specifier ) ->
         placeholder: specifier.placeholder
 
     # admonition
-    HTML.div if specifier.error?
-      [
+    if specifier.error?
+      HTML.div class: "error", [
         HTML.tag "named-icon", name: "error"
         Render.option "error", specifier
       ]
+    else HTML.div()
   ]
 
 export default template
