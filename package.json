@@ -37,7 +37,7 @@
     "@dashkite/joy": "0.8.0",
     "@dashkite/mercury": "^0.3.1",
     "@dashkite/mercury-sky": "^0.2.0",
-    "@dashkite/posh": "link:../posh",
+    "@dashkite/posh": "0.1.0",
     "@dashkite/quark": "2.2.0",
     "@dashkite/reactive": "0.4.0",
     "@dashkite/registry": "0.13.0",
