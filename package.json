@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@dashkite/dominator": "0.1.0",
-    "@dashkite/domo": "link:../domo",
+    "@dashkite/domo": "0.2.0",
     "@dashkite/generic": "0.6.0",
     "@dashkite/joy": "0.8.0",
     "@dashkite/mercury": "^0.3.1",
