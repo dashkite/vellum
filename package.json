@@ -30,7 +30,7 @@
     "release": "genie release"
   },
   "dependencies": {
-    "@dashkite/dominator": "link:../dominator",
+    "@dashkite/dominator": "0.1.0",
     "@dashkite/domo": "link:../domo",
     "@dashkite/generic": "0.6.0",
     "@dashkite/html-render": "link:../html-render",
