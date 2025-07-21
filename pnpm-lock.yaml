@@ -17,9 +17,6 @@ importers:
       '@dashkite/generic':
         specifier: 0.6.0
         version: 0.6.0
-      '@dashkite/html-render':
-        specifier: link:../html-render
-        version: link:../html-render
       '@dashkite/joy':
         specifier: 0.8.0
         version: 0.8.0
