@@ -42,7 +42,6 @@
     "@dashkite/registry": "0.13.0",
     "@dashkite/rio": "link:../rio",
     "@dashkite/rio-oxygen": "0.7.0",
-    "@dashkite/rio-vega": "link:../rio-vega",
     "@dashkite/wayland": "0.1.0",
     "@dashkite/zest": "0.1.0",
     "dompurify": "^2.3.1",

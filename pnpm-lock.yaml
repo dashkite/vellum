@@ -44,9 +44,6 @@ importers:
       '@dashkite/rio-oxygen':
         specifier: 0.7.0
         version: 0.7.0
-      '@dashkite/rio-vega':
-        specifier: link:../rio-vega
-        version: link:../rio-vega
       '@dashkite/wayland':
         specifier: 0.1.0
         version: 0.1.0
