@@ -30,8 +30,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       '@dashkite/quark':
-        specifier: ^2.6.2
-        version: 2.6.2
+        specifier: ^2.6.3
+        version: 2.6.3
       '@dashkite/reactive':
         specifier: ^0.4.0
         version: 0.4.0
@@ -67,8 +67,8 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0
       '@dashkite/genie':
-        specifier: ^0.20.6
-        version: 0.20.6
+        specifier: ^0.20.7
+        version: 0.20.7
       '@dashkite/genie-clean':
         specifier: ^0.9.0
         version: 0.9.0
@@ -688,8 +688,8 @@ packages:
   '@dashkite/genie-stylus@0.8.0':
     resolution: {integrity: sha512-5pothZUqdJC+ulc9pxwjD8FaQBKiO857mUgs9x5CcwPapT4nnysz9Z5IQZ6Mh4sbgNTtYFWx8DQpp32tMGj+cw==}
 
-  '@dashkite/genie@0.20.6':
-    resolution: {integrity: sha512-X623qdU3bgTBWPM2nQKrJ1uqNmPGbE3TR6VnrTBE6V7SziV4dNnWTkak9ShiIjltg1mGfNoxkbOXa3DDtynF+g==}
+  '@dashkite/genie@0.20.7':
+    resolution: {integrity: sha512-jbLlY1/1A0UWx1r0z5RJEJIkIkcOvd3CAh1AmKFeZC2ydS0L3p2r388K6X1PrRlJkOa+pJkiupD426HaJXFShg==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -783,8 +783,8 @@ packages:
   '@dashkite/posh@0.1.0':
     resolution: {integrity: sha512-ueGe7AP0U1rS/ClEODEeTOdhu1+ZRtZaED+tQjBqCCHKKY8SHUgnuoZ2sBPXF+6RqQ3JVQjrxfT6TTdyKj74MQ==}
 
-  '@dashkite/quark@2.6.2':
-    resolution: {integrity: sha512-oCCA9amC2wuFAgbD6lGatJBvZQP1yQ9doGDDemrChYtoiWnlrASXR8aXFnFgkXF/PLBOx0j1CxYt4HBs53FTWA==}
+  '@dashkite/quark@2.6.3':
+    resolution: {integrity: sha512-V9Qi82sZCDEFqFcI6hx+Aek1RvBBuGR6fdwvM+IyIlw65cYGT4xRIFpCwCECwgm6LSThvChNL+zDgAoJOIIAzg==}
 
   '@dashkite/reactive@0.3.0':
     resolution: {integrity: sha512-eYANxFrfjDz8xbiC2pYw4SJb/nA37vndVWv9ctvcdnsqeOH5YiFEq5GSqqt221ANrHQvUsKFn8jpaRAlxTUwXg==}
@@ -2791,7 +2791,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@dashkite/genie@0.20.6':
+  '@dashkite/genie@0.20.7':
     dependencies:
       '@dashkite/joy': 0.7.0
       '@dashkite/kaiko': 0.3.3
@@ -2964,7 +2964,7 @@ snapshots:
       '@oddbird/css-anchor-positioning': 0.6.1
       remixicon: 4.6.0
 
-  '@dashkite/quark@2.6.2':
+  '@dashkite/quark@2.6.3':
     dependencies:
       '@dashkite/joy': 0.7.0
       '@dashkite/katana': 0.4.8
