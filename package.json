@@ -40,7 +40,7 @@
     "@dashkite/quark": "^2.6.5",
     "@dashkite/reactive": "^0.4.0",
     "@dashkite/registry": "^0.13.0",
-    "@dashkite/rio": "^0.1.5",
+    "@dashkite/rio": "^0.1.6",
     "@dashkite/rio-oxygen": "^0.7.0",
     "@dashkite/wayland": "^0.1.7",
     "@dashkite/zest": "^0.1.6",
