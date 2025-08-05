@@ -39,8 +39,8 @@ importers:
         specifier: ^0.13.0
         version: 0.13.0
       '@dashkite/rio':
-        specifier: ^0.1.9
-        version: 0.1.9
+        specifier: ^0.1.10
+        version: 0.1.10
       '@dashkite/rio-oxygen':
         specifier: ^0.7.0
         version: 0.7.0
@@ -795,8 +795,8 @@ packages:
   '@dashkite/rio-oxygen@0.7.0':
     resolution: {integrity: sha512-iDylh3wu7IX2I5woDQOgmIz5wugTMRhHG2lSprcZCgjnFeUtkOUMCk2pKJlI05mfG2OIqzd9NmKvlgicDtuC3w==}
 
-  '@dashkite/rio@0.1.9':
-    resolution: {integrity: sha512-OGNcKzFGZjN3J/E6MxslySRHbrF3TFmFCD7bC7yLlZ1HKvW0OsnuqSOqgwepg6XOmeIm313r+pMAJVH00nZMEQ==}
+  '@dashkite/rio@0.1.10':
+    resolution: {integrity: sha512-YqjNopoTemOqpFYs4gB4QoxT7RCRMrXqUY0EwHdsHS1/yDN4c0ymGurYv6cZnyOWErypTWXWWKg/9t+mK9fDxg==}
 
   '@dashkite/stylist@0.0.6':
     resolution: {integrity: sha512-UCAMArtPJjvRuNcugpWm587VqO28Ll9f1LvlDIHBHJJbJqc2+Grp/8SIV7kuge99Lc+VuAl97NE4kZ/Nh/XBgA==}
@@ -2968,7 +2968,7 @@ snapshots:
       '@dashkite/joy': 0.7.0
       '@dashkite/katana': 0.4.8
 
-  '@dashkite/rio@0.1.9':
+  '@dashkite/rio@0.1.10':
     dependencies:
       '@dashkite/joy': 0.3.16
       '@dashkite/katana': 0.4.8
