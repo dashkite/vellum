@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@dashkite/dominator':
-        specifier: ^0.1.9
-        version: 0.1.9
+        specifier: ^0.1.10
+        version: 0.1.10
       '@dashkite/domo':
         specifier: ^0.2.8
         version: 0.2.8
@@ -39,17 +39,17 @@ importers:
         specifier: ^0.13.0
         version: 0.13.0
       '@dashkite/rio':
-        specifier: ^0.1.14
-        version: 0.1.14
+        specifier: ^0.1.15
+        version: 0.1.15
       '@dashkite/rio-oxygen':
         specifier: ^0.7.0
         version: 0.7.0
       '@dashkite/wayland':
+        specifier: ^0.1.11
+        version: 0.1.11
+      '@dashkite/zest':
         specifier: ^0.1.10
         version: 0.1.10
-      '@dashkite/zest':
-        specifier: ^0.1.9
-        version: 0.1.9
       dompurify:
         specifier: ^2.5.8
         version: 2.5.8
@@ -652,8 +652,8 @@ packages:
   '@dashkite/assert@0.3.0':
     resolution: {integrity: sha512-x0lHMF8k2CkFrx7gmtT8qoZ3GPk+RPPLRG5RcKMheqS7zDPEDPZ7IkHzXt2kq7LyvTMZZ+TI3suW44+Ms6Mqbg==}
 
-  '@dashkite/dominator@0.1.9':
-    resolution: {integrity: sha512-M2MXN/SbC0RHyoDYM6rD3I2A/CQNzy8PkZU+vOofRVsIR2dO9HzBceJWO7Cwm/f+Osx3aDPhnVwgVDlgZjvE8Q==}
+  '@dashkite/dominator@0.1.10':
+    resolution: {integrity: sha512-HphyAtSlLlotEqIBIVdkwCuo/isdNj3oao7gIHADS9O2TRTRdgbqT3UI30H5lBpNO7LTsa7QRMut1tqHudlX1Q==}
 
   '@dashkite/domo@0.2.8':
     resolution: {integrity: sha512-lMjdGAp6Ck+SX50SDM1hWvl0rj7Xbp70Y6SE74GzNzQu+p9u5UNleImsbh3aLQrbmGBz9IALENfGSGxjxm4dbg==}
@@ -795,8 +795,8 @@ packages:
   '@dashkite/rio-oxygen@0.7.0':
     resolution: {integrity: sha512-iDylh3wu7IX2I5woDQOgmIz5wugTMRhHG2lSprcZCgjnFeUtkOUMCk2pKJlI05mfG2OIqzd9NmKvlgicDtuC3w==}
 
-  '@dashkite/rio@0.1.14':
-    resolution: {integrity: sha512-cmAdhwTBTqoNznJ2/6MoTISFpuqFcV+35PM7Z1JjpYvc3eIOQYnA9BNSL0rb6PjitYhHWVvBM85VsnfIGavMFw==}
+  '@dashkite/rio@0.1.15':
+    resolution: {integrity: sha512-MwNKpy7PdfLkNVqSFhepMV19/XAhnzoQxiztC4cDNZIeGNnmT+yoFgR6kzoVAYxnCMOADMHZMLZcbKD4Z90hfg==}
 
   '@dashkite/stylist@0.0.6':
     resolution: {integrity: sha512-UCAMArtPJjvRuNcugpWm587VqO28Ll9f1LvlDIHBHJJbJqc2+Grp/8SIV7kuge99Lc+VuAl97NE4kZ/Nh/XBgA==}
@@ -804,14 +804,14 @@ packages:
   '@dashkite/stylist@0.3.0':
     resolution: {integrity: sha512-o6Naq1/uvWTRAjmVsje9DwUVnpGb71EAVkYyq2Ex3anpsFjf/US1r9lcqJ4tRU4KK3ekKPgjT877W7evFGW73w==}
 
-  '@dashkite/wayland@0.1.10':
-    resolution: {integrity: sha512-U3oKd16tv9nopEyFVyJ1Zn2Ax7Bp7IX3JqvZboNkYF5LiCnNtJGsZJKemuZrmi7gEiHgW6pLRHj7DxfyrDmxWg==}
+  '@dashkite/wayland@0.1.11':
+    resolution: {integrity: sha512-g0BWjAxyO47NFQRhmf3FsBv5oMM4p7KNlklqlGJ9mmNQBC9Zd3u15pDfxvQYQ1HWkYLhUk3rQyz/BI3rIUJjfg==}
 
   '@dashkite/zephyr@0.12.1':
     resolution: {integrity: sha512-84wSTbmFpI+tydtzTkMT6FS5ybnNaL4V40fA2c235/UPx/Whg3NRr6BaVLW53+v+bHL6fDbttCTZNNLEtzTxPw==}
 
-  '@dashkite/zest@0.1.9':
-    resolution: {integrity: sha512-pBdrkj4+ZoymMEx/c5M3M8Lsf7ApxCP34hXo+tYE0i8ivivTkhOBOT7rstlKIa7+lo8USK1M7SJknaj4MKoHbw==}
+  '@dashkite/zest@0.1.10':
+    resolution: {integrity: sha512-tWcWMn5VBEOnLNLfz2PSZkN6wPNHDUMLT9wjqTjIkj0L7pYkCdsj0kq6bBF3wXac9O6d6C2jgxjzsEdu9MQJ/w==}
 
   '@deno/shim-deno-test@0.5.0':
     resolution: {integrity: sha512-4nMhecpGlPi0cSzT67L+Tm+GOJqvuk8gqHBziqcUQOarnuIax1z96/gJHCSIz2Z0zhxE6Rzwb3IZXPtFh51j+w==}
@@ -2703,7 +2703,7 @@ snapshots:
     dependencies:
       '@dashkite/joy': 0.6.0
 
-  '@dashkite/dominator@0.1.9':
+  '@dashkite/dominator@0.1.10':
     dependencies:
       '@dashkite/flashdom': 0.1.8
       '@dashkite/generic': 0.5.0
@@ -2968,7 +2968,7 @@ snapshots:
       '@dashkite/joy': 0.7.0
       '@dashkite/katana': 0.4.8
 
-  '@dashkite/rio@0.1.14':
+  '@dashkite/rio@0.1.15':
     dependencies:
       '@dashkite/joy': 0.3.16
       '@dashkite/katana': 0.4.8
@@ -2984,14 +2984,14 @@ snapshots:
     dependencies:
       '@dashkite/joy': 0.3.16
 
-  '@dashkite/wayland@0.1.10':
+  '@dashkite/wayland@0.1.11':
     dependencies:
-      '@dashkite/dominator': 0.1.9
+      '@dashkite/dominator': 0.1.10
       '@dashkite/generic': 0.5.0
       '@dashkite/joy': 0.7.0
       '@dashkite/reactive': 0.3.0
       '@dashkite/stylist': 0.3.0
-      '@dashkite/zest': 0.1.9
+      '@dashkite/zest': 0.1.10
       diffhtml: 1.0.0-beta.30
 
   '@dashkite/zephyr@0.12.1':
@@ -2999,7 +2999,7 @@ snapshots:
       '@dashkite/joy': 0.7.0
       js-yaml: 4.1.0
 
-  '@dashkite/zest@0.1.9':
+  '@dashkite/zest@0.1.10':
     dependencies:
       '@dashkite/flashdom': 0.1.8
       '@dashkite/generic': 0.9.6
