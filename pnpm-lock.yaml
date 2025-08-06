@@ -45,8 +45,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       '@dashkite/wayland':
-        specifier: ^0.1.11
-        version: 0.1.11
+        specifier: ^0.1.12
+        version: 0.1.12
       '@dashkite/zest':
         specifier: ^0.1.10
         version: 0.1.10
@@ -804,8 +804,8 @@ packages:
   '@dashkite/stylist@0.3.0':
     resolution: {integrity: sha512-o6Naq1/uvWTRAjmVsje9DwUVnpGb71EAVkYyq2Ex3anpsFjf/US1r9lcqJ4tRU4KK3ekKPgjT877W7evFGW73w==}
 
-  '@dashkite/wayland@0.1.11':
-    resolution: {integrity: sha512-g0BWjAxyO47NFQRhmf3FsBv5oMM4p7KNlklqlGJ9mmNQBC9Zd3u15pDfxvQYQ1HWkYLhUk3rQyz/BI3rIUJjfg==}
+  '@dashkite/wayland@0.1.12':
+    resolution: {integrity: sha512-GafJHxPsPDxHEfRLi8KZZ2NMNsQx3JlkkgRvBJY/tLosoHcY6+/KUKhxOo8TX8zCcoMOZoooW7vQIAVaAGrrvA==}
 
   '@dashkite/zephyr@0.12.1':
     resolution: {integrity: sha512-84wSTbmFpI+tydtzTkMT6FS5ybnNaL4V40fA2c235/UPx/Whg3NRr6BaVLW53+v+bHL6fDbttCTZNNLEtzTxPw==}
@@ -2984,7 +2984,7 @@ snapshots:
     dependencies:
       '@dashkite/joy': 0.3.16
 
-  '@dashkite/wayland@0.1.11':
+  '@dashkite/wayland@0.1.12':
     dependencies:
       '@dashkite/dominator': 0.1.10
       '@dashkite/generic': 0.5.0
