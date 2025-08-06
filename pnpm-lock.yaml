@@ -30,8 +30,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       '@dashkite/quark':
-        specifier: ^2.6.6
-        version: 2.6.6
+        specifier: ^2.6.7
+        version: 2.6.7
       '@dashkite/reactive':
         specifier: ^0.4.0
         version: 0.4.0
@@ -67,8 +67,8 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0
       '@dashkite/genie':
-        specifier: ^0.20.9
-        version: 0.20.9
+        specifier: ^0.20.10
+        version: 0.20.10
       '@dashkite/genie-clean':
         specifier: ^0.9.0
         version: 0.9.0
@@ -685,8 +685,8 @@ packages:
   '@dashkite/genie-stylus@0.8.0':
     resolution: {integrity: sha512-5pothZUqdJC+ulc9pxwjD8FaQBKiO857mUgs9x5CcwPapT4nnysz9Z5IQZ6Mh4sbgNTtYFWx8DQpp32tMGj+cw==}
 
-  '@dashkite/genie@0.20.9':
-    resolution: {integrity: sha512-5EVuUP0q/xS35R/tV6EmFLwVct2ao3JSR11Ff3r5nvWUK+kP4WqvX+sLk6dgHEkc1cOZwMX03FwDN93UUqtMKQ==}
+  '@dashkite/genie@0.20.10':
+    resolution: {integrity: sha512-Ir9aw5anu9t2F0tlIfmauT1ofKzU2kGpxVfc4bnW9t+Uz7SrIrC4sauX+r/2PzrkXk/gRAhuKT7VKTz+SlYcqw==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -780,8 +780,8 @@ packages:
   '@dashkite/posh@0.1.0':
     resolution: {integrity: sha512-ueGe7AP0U1rS/ClEODEeTOdhu1+ZRtZaED+tQjBqCCHKKY8SHUgnuoZ2sBPXF+6RqQ3JVQjrxfT6TTdyKj74MQ==}
 
-  '@dashkite/quark@2.6.6':
-    resolution: {integrity: sha512-Atln0kUhPhxQMab+fU6WXXINjr9QpfsArmoaU4AkshugZwumo3kbZgYFFJqcdi8nSWDD3a1OjIHHA2icq0I/LA==}
+  '@dashkite/quark@2.6.7':
+    resolution: {integrity: sha512-qY/WXKVcjzVy+RPbrif9vutpu3Y2ihdtbDSy5HupTb2sDVF+VcXMfB6+KdYwwvG/MUPBlSSlVUKn3fkaYi6/aA==}
 
   '@dashkite/reactive@0.3.0':
     resolution: {integrity: sha512-eYANxFrfjDz8xbiC2pYw4SJb/nA37vndVWv9ctvcdnsqeOH5YiFEq5GSqqt221ANrHQvUsKFn8jpaRAlxTUwXg==}
@@ -1188,8 +1188,8 @@ packages:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
     engines: {node: '>= 0.4'}
 
-  electron-to-chromium@1.5.195:
-    resolution: {integrity: sha512-URclP0iIaDUzqcAyV1v2PgduJ9N0IdXmWsnPzPfelvBmjmZzEy6xJcjb1cXj+TbYqXgtLrjHEoaSIdTYhw4ezg==}
+  electron-to-chromium@1.5.196:
+    resolution: {integrity: sha512-FnnXV0dXANe7YNtKl/Af1raw+sBBUPuwcNEWfLOJyumXBvfQEBsnc0Gn+yEnVscq4x3makTtrlf4TjAo7lcXTQ==}
 
   end-of-stream@1.4.5:
     resolution: {integrity: sha512-ooEGc6HP26xXq/N+GCGOT0JKCLDGrq2bQUZrQ7gyrJiZANJ/8YDTxTpQBXGMn+WbIQXNVpyWymm7KYVICQnyOg==}
@@ -2772,7 +2772,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@dashkite/genie@0.20.9':
+  '@dashkite/genie@0.20.10':
     dependencies:
       '@dashkite/joy': 0.7.0
       '@dashkite/kaiko': 0.3.3
@@ -2945,7 +2945,7 @@ snapshots:
       '@oddbird/css-anchor-positioning': 0.6.1
       remixicon: 4.6.0
 
-  '@dashkite/quark@2.6.6':
+  '@dashkite/quark@2.6.7':
     dependencies:
       '@dashkite/joy': 0.7.0
       '@dashkite/katana': 0.4.8
@@ -3255,7 +3255,7 @@ snapshots:
   browserslist@4.25.1:
     dependencies:
       caniuse-lite: 1.0.30001731
-      electron-to-chromium: 1.5.195
+      electron-to-chromium: 1.5.196
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.25.1)
 
@@ -3374,7 +3374,7 @@ snapshots:
       es-errors: 1.3.0
       gopd: 1.2.0
 
-  electron-to-chromium@1.5.195: {}
+  electron-to-chromium@1.5.196: {}
 
   end-of-stream@1.4.5:
     dependencies:
