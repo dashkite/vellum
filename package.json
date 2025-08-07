@@ -30,7 +30,7 @@
     "release": "genie release"
   },
   "dependencies": {
-    "@dashkite/dominator": "^0.1.12",
+    "@dashkite/dominator": "^0.1.13",
     "@dashkite/domo": "^0.2.11",
     "@dashkite/generic": "^0.6.0",
     "@dashkite/joy": "^0.8.0",
@@ -40,9 +40,9 @@
     "@dashkite/quark": "^2.6.10",
     "@dashkite/reactive": "^0.4.0",
     "@dashkite/registry": "^0.13.0",
-    "@dashkite/rio": "^0.1.17",
+    "@dashkite/rio": "^0.1.18",
     "@dashkite/rio-oxygen": "^0.7.0",
-    "@dashkite/wayland": "^0.1.15",
+    "@dashkite/wayland": "^0.1.16",
     "@dashkite/zest": "^0.1.13",
     "dompurify": "^2.5.8",
     "remarkable": "^2.0.1"
