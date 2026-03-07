@@ -47,13 +47,13 @@ class extends do Fn.pipe [
     return
 
   @input()
-    .intercept()
-    .apply -> @dispatch "input", detail: @dom
-
-  @change()
-    .intercept()
     .apply ( event ) ->
       @dom.setValidity event.target.validity,
         event.target.validationMessage, event.target
       @dom.value = event.target.value
+
+  # `change` events do not cross shadow boundaries
+  @change()
+    .intercept()
+    .apply ( event ) ->
       @dispatch "change", detail: @dom
