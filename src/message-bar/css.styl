@@ -10,7 +10,11 @@
 
 .container
   color var(--background)
+  min-height s("calc(1lh + 1rem)")
   border-radius 0.5rem
+
+  &::before
+    padding-inline-end 0.25rem
 
   &.fade
     animation fade 10s ease alternate
@@ -18,13 +22,24 @@
   
   &.success
     background var(--success)
+    &::before
+      // checkmark
+      content "\2713"
 
   &.info
     background var(--info)
+    &::before
+      // circle i
+      content "\24d8"
 
   &.warning
     background var(--warning)
+    &::before
+      // triangle exclamation
+      content "\26A0"
 
   &.failure
     background var(--failure)
-  
+    // circle x
+    &::before
+      content "\24e7"
