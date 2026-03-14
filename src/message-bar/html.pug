@@ -1,4 +1,4 @@
 if message
-  .container.fade( class = name )= message
+  .container.fade( class = name, part = "message" )= message
 else
-  .container
+  .container( part = "message" )

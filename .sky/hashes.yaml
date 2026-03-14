@@ -1,8 +1,8 @@
-build/browser/src/message-bar/css.js: OX3686oy
+build/browser/src/message-bar/css.js: kaYSFJsG
 build/browser/src/form-autocomplete/html.js: FvocTwK1
 build/browser/src/named-icon/index.js: NhKM5U19
-build/browser/src/index.js: KPUscUit
-build/browser/src/message-bar/html.js: 41idkTuk
+build/browser/src/index.js: g4QjBjso
+build/browser/src/message-bar/html.js: zYttuxeu
 build/browser/src/message-bar/index.js: iNfOK9AA
 build/browser/src/form-autocomplete/events/index.js: n6Ae_n4D
 build/browser/src/form-field/index.js: zdxu7vcz
@@ -11,3 +11,9 @@ build/browser/src/form-field/html.js: Shkf8fiC
 build/browser/src/form-autocomplete/css.js: SPeGaq5k
 build/browser/src/form-autocomplete/index.js: D3h9H8t5
 build/browser/src/form-field/css.js: pJgd8-dx
+build/browser/src/status-indicator/index.js: Ym3gMw-4
+build/browser/src/status-indicator/css.js: pqvpRH5x
+build/browser/src/status-indicator/html.js: W_TXgjLX
+build/browser/src/status-bar/css.js: oi6O7b9h
+build/browser/src/status-bar/html.js: TNTA-M-g
+build/browser/src/status-bar/index.js: Q3iect_I
