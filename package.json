@@ -44,7 +44,7 @@
     "@dashkite/rio-oxygen": "^0.7.0",
     "@dashkite/wayland": "^0.1.27",
     "@dashkite/zest": "^0.1.24",
-    "dompurify": "^2.5.8",
+    "dompurify": "^2.5.9",
     "remarkable": "^2.0.1"
   },
   "devDependencies": {
