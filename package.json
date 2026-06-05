@@ -1,6 +1,6 @@
 {
   "name": "@dashkite/vellum",
-  "version": "0.10.48",
+  "version": "0.10.62",
   "description": "Web Components used in DashKite applications",
   "homepage": "https://github.com/dashkite/vellum#readme",
   "bugs": {
@@ -30,6 +30,7 @@
     "release": "genie release"
   },
   "dependencies": {
+
     "@dashkite/dominator": "0.1.22",
     "@dashkite/domo": "0.2.20",
     "@dashkite/generic": "0.6.0",
@@ -55,5 +56,6 @@
     "@dashkite/genie-stylus": "0.8.0",
     "@dashkite/katana": "0.4.8",
     "@dashkite/mimic": "0.2.4"
+
   }
 }
