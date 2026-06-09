@@ -8,12 +8,22 @@ pug:
       - preset: js
         glob:
           - src/**/*.pug
+      - preset: html
+        glob: test/client/index.pug
 
 stylus:
   targets:
     browser:
       - preset: css
-        glob: src/index.styl
+        glob:
+          - src/index.styl
+          - test/client/index.styl
       - preset: js
         glob:
           - src/**/*.styl
+
+atlas:
+  build: ./build/browser
+  target: ./build/browser/test/client/index.html
+  entries:
+    - ./build/browser/test/client/index.js

@@ -3,9 +3,8 @@ doctype html
 html
 
   head
-    style
-      include:stylus index.styl
-    script(type = "module" src = "/build/browser/test/client/index.js")
+    link(type = "text/css" rel = "stylesheet" href = "/test/client/index.css")
+    script(type = "module" src = "/test/client/index.js")
   body
     header
       h1 Vellum Lookbook
